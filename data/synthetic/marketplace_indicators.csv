@@ -1,0 +1,833 @@
+INDICATOR_ID,INDICATOR_DATE,INDICATOR_NAME,INDICATOR_VALUE,PERCENTAGE_CHANGE,INDICATOR_TYPE,DATA_SOURCE
+1,2024-01-21,Construction Starts Index,97.4174,0.0898,ECONOMIC,Census Bureau
+2,2024-01-21,Clinical Trial Spend ($B),2.5184,2.3711,INDUSTRY,ISM
+3,2024-01-21,Industrial Production Index,95.3017,1.8598,ECONOMIC,Federal Reserve
+4,2024-01-21,Manufacturing PMI,49.4772,0.5187,ECONOMIC,Federal Reserve
+5,2024-01-21,Freight Cost Index,121.4294,-2.7437,ECONOMIC,Federal Reserve
+6,2024-01-21,Steel Demand Index,116.7127,-3.492,COMMODITY,Industry Association
+7,2024-01-21,Semiconductor Demand Index,98.8534,2.7812,INDUSTRY,Census Bureau
+8,2024-01-21,Chemical Production Index,102.7859,0.8321,INDUSTRY,Census Bureau
+9,2024-01-28,Construction Starts Index,95.6861,0.5251,ECONOMIC,Federal Reserve
+10,2024-01-28,Clinical Trial Spend ($B),2.3303,-1.3237,INDUSTRY,Census Bureau
+11,2024-01-28,Industrial Production Index,95.6142,-0.3077,ECONOMIC,Census Bureau
+12,2024-01-28,Manufacturing PMI,49.0314,1.2339,ECONOMIC,ISM
+13,2024-01-28,Freight Cost Index,110.6599,0.2397,ECONOMIC,Census Bureau
+14,2024-01-28,Steel Demand Index,114.1422,-2.5253,COMMODITY,ISM
+15,2024-01-28,Semiconductor Demand Index,98.4019,-3.7721,INDUSTRY,Industry Association
+16,2024-01-28,Chemical Production Index,100.105,-2.6053,INDUSTRY,Census Bureau
+17,2024-02-04,Construction Starts Index,104.2172,0.0987,ECONOMIC,Federal Reserve
+18,2024-02-04,Clinical Trial Spend ($B),2.5787,-0.8338,INDUSTRY,Industry Association
+19,2024-02-04,Industrial Production Index,98.4166,1.028,ECONOMIC,Federal Reserve
+20,2024-02-04,Manufacturing PMI,49.7799,-1.9,ECONOMIC,Industry Association
+21,2024-02-04,Freight Cost Index,117.7106,-2.1146,ECONOMIC,Industry Association
+22,2024-02-04,Steel Demand Index,113.7783,0.157,COMMODITY,ISM
+23,2024-02-04,Semiconductor Demand Index,87.5227,2.1079,INDUSTRY,Census Bureau
+24,2024-02-04,Chemical Production Index,101.0237,-1.1395,INDUSTRY,Industry Association
+25,2024-02-11,Construction Starts Index,99.8377,1.8305,ECONOMIC,Census Bureau
+26,2024-02-11,Clinical Trial Spend ($B),2.6121,1.4031,INDUSTRY,ISM
+27,2024-02-11,Industrial Production Index,96.6692,1.4753,ECONOMIC,ISM
+28,2024-02-11,Manufacturing PMI,51.0951,2.7289,ECONOMIC,ISM
+29,2024-02-11,Freight Cost Index,120.9286,-0.3748,ECONOMIC,Federal Reserve
+30,2024-02-11,Steel Demand Index,104.3325,0.2875,COMMODITY,Industry Association
+31,2024-02-11,Semiconductor Demand Index,95.6215,-1.0948,INDUSTRY,ISM
+32,2024-02-11,Chemical Production Index,102.7266,1.2725,INDUSTRY,Industry Association
+33,2024-02-18,Construction Starts Index,102.0025,0.722,ECONOMIC,ISM
+34,2024-02-18,Clinical Trial Spend ($B),2.634,0.5913,INDUSTRY,Federal Reserve
+35,2024-02-18,Industrial Production Index,97.1941,-4.6465,ECONOMIC,Census Bureau
+36,2024-02-18,Manufacturing PMI,51.5896,2.2138,ECONOMIC,ISM
+37,2024-02-18,Freight Cost Index,112.8243,4.2206,ECONOMIC,Federal Reserve
+38,2024-02-18,Steel Demand Index,106.574,-5.2447,COMMODITY,Industry Association
+39,2024-02-18,Semiconductor Demand Index,86.9564,0.9659,INDUSTRY,Industry Association
+40,2024-02-18,Chemical Production Index,103.9706,-3.6576,INDUSTRY,Federal Reserve
+41,2024-02-25,Construction Starts Index,98.8463,-0.1413,ECONOMIC,Census Bureau
+42,2024-02-25,Clinical Trial Spend ($B),2.6034,1.8538,INDUSTRY,Federal Reserve
+43,2024-02-25,Industrial Production Index,96.1647,1.6759,ECONOMIC,ISM
+44,2024-02-25,Manufacturing PMI,49.7855,0.9863,ECONOMIC,Census Bureau
+45,2024-02-25,Freight Cost Index,116.5693,0.2872,ECONOMIC,ISM
+46,2024-02-25,Steel Demand Index,111.6869,-1.7051,COMMODITY,Census Bureau
+47,2024-02-25,Semiconductor Demand Index,89.805,0.6769,INDUSTRY,Federal Reserve
+48,2024-02-25,Chemical Production Index,103.0456,-1.5529,INDUSTRY,Census Bureau
+49,2024-03-03,Construction Starts Index,97.6528,-3.3232,ECONOMIC,Federal Reserve
+50,2024-03-03,Clinical Trial Spend ($B),2.5795,3.8576,INDUSTRY,Industry Association
+51,2024-03-03,Industrial Production Index,96.5984,2.6079,ECONOMIC,Census Bureau
+52,2024-03-03,Manufacturing PMI,49.2901,2.4131,ECONOMIC,Federal Reserve
+53,2024-03-03,Freight Cost Index,124.723,-0.4865,ECONOMIC,Census Bureau
+54,2024-03-03,Steel Demand Index,106.0444,-1.9705,COMMODITY,Census Bureau
+55,2024-03-03,Semiconductor Demand Index,90.8297,-1.3213,INDUSTRY,Census Bureau
+56,2024-03-03,Chemical Production Index,103.741,-4.057,INDUSTRY,Federal Reserve
+57,2024-03-10,Construction Starts Index,104.8119,0.8312,ECONOMIC,ISM
+58,2024-03-10,Clinical Trial Spend ($B),2.4498,2.2723,INDUSTRY,ISM
+59,2024-03-10,Industrial Production Index,98.4536,0.9759,ECONOMIC,Census Bureau
+60,2024-03-10,Manufacturing PMI,51.0999,2.1729,ECONOMIC,Census Bureau
+61,2024-03-10,Freight Cost Index,121.1572,-2.4815,ECONOMIC,Census Bureau
+62,2024-03-10,Steel Demand Index,106.269,-3.4767,COMMODITY,Census Bureau
+63,2024-03-10,Semiconductor Demand Index,89.9108,0.9896,INDUSTRY,ISM
+64,2024-03-10,Chemical Production Index,102.3525,1.1971,INDUSTRY,Federal Reserve
+65,2024-03-17,Construction Starts Index,99.482,-0.1223,ECONOMIC,ISM
+66,2024-03-17,Clinical Trial Spend ($B),2.6406,1.2565,INDUSTRY,Census Bureau
+67,2024-03-17,Industrial Production Index,97.8989,1.6054,ECONOMIC,Census Bureau
+68,2024-03-17,Manufacturing PMI,50.2339,3.0195,ECONOMIC,Industry Association
+69,2024-03-17,Freight Cost Index,117.579,4.1921,ECONOMIC,Industry Association
+70,2024-03-17,Steel Demand Index,113.7687,-0.2491,COMMODITY,Federal Reserve
+71,2024-03-17,Semiconductor Demand Index,97.9486,-1.4141,INDUSTRY,Industry Association
+72,2024-03-17,Chemical Production Index,99.147,0.0739,INDUSTRY,ISM
+73,2024-03-24,Construction Starts Index,97.5192,-1.2928,ECONOMIC,Census Bureau
+74,2024-03-24,Clinical Trial Spend ($B),2.5412,2.3993,INDUSTRY,Industry Association
+75,2024-03-24,Industrial Production Index,95.1848,-2.0066,ECONOMIC,Federal Reserve
+76,2024-03-24,Manufacturing PMI,50.9913,-0.9355,ECONOMIC,Industry Association
+77,2024-03-24,Freight Cost Index,127.0224,-2.0709,ECONOMIC,Federal Reserve
+78,2024-03-24,Steel Demand Index,114.795,-0.3646,COMMODITY,Federal Reserve
+79,2024-03-24,Semiconductor Demand Index,101.8353,-2.0182,INDUSTRY,Industry Association
+80,2024-03-24,Chemical Production Index,102.7338,2.0952,INDUSTRY,Industry Association
+81,2024-03-31,Construction Starts Index,105.5821,1.5986,ECONOMIC,Industry Association
+82,2024-03-31,Clinical Trial Spend ($B),2.625,-1.1628,INDUSTRY,Federal Reserve
+83,2024-03-31,Industrial Production Index,99.0441,0.3951,ECONOMIC,Federal Reserve
+84,2024-03-31,Manufacturing PMI,48.8933,2.9213,ECONOMIC,ISM
+85,2024-03-31,Freight Cost Index,112.6072,-0.1977,ECONOMIC,Federal Reserve
+86,2024-03-31,Steel Demand Index,120.4168,-0.7513,COMMODITY,Federal Reserve
+87,2024-03-31,Semiconductor Demand Index,98.5779,3.1432,INDUSTRY,ISM
+88,2024-03-31,Chemical Production Index,98.8208,2.7597,INDUSTRY,Census Bureau
+89,2024-04-07,Construction Starts Index,99.3616,-0.9238,ECONOMIC,Industry Association
+90,2024-04-07,Clinical Trial Spend ($B),2.2588,2.0507,INDUSTRY,ISM
+91,2024-04-07,Industrial Production Index,98.1306,0.4845,ECONOMIC,Industry Association
+92,2024-04-07,Manufacturing PMI,49.4837,-4.5463,ECONOMIC,Industry Association
+93,2024-04-07,Freight Cost Index,109.4963,0.0257,ECONOMIC,Industry Association
+94,2024-04-07,Steel Demand Index,107.2592,1.9533,COMMODITY,Industry Association
+95,2024-04-07,Semiconductor Demand Index,88.9109,3.7171,INDUSTRY,Industry Association
+96,2024-04-07,Chemical Production Index,103.6428,-1.9486,INDUSTRY,Federal Reserve
+97,2024-04-14,Construction Starts Index,98.0462,3.3247,ECONOMIC,Census Bureau
+98,2024-04-14,Clinical Trial Spend ($B),2.4275,-1.2618,INDUSTRY,Census Bureau
+99,2024-04-14,Industrial Production Index,96.4497,-0.3238,ECONOMIC,Census Bureau
+100,2024-04-14,Manufacturing PMI,47.4139,-1.6122,ECONOMIC,ISM
+101,2024-04-14,Freight Cost Index,111.287,-0.5496,ECONOMIC,Industry Association
+102,2024-04-14,Steel Demand Index,107.437,-3.9058,COMMODITY,Industry Association
+103,2024-04-14,Semiconductor Demand Index,97.6193,0.4125,INDUSTRY,Census Bureau
+104,2024-04-14,Chemical Production Index,99.5134,-4.6622,INDUSTRY,Industry Association
+105,2024-04-21,Construction Starts Index,102.43,-6.8458,ECONOMIC,Federal Reserve
+106,2024-04-21,Clinical Trial Spend ($B),2.4676,-0.8736,INDUSTRY,Federal Reserve
+107,2024-04-21,Industrial Production Index,98.9302,-1.8661,ECONOMIC,ISM
+108,2024-04-21,Manufacturing PMI,51.845,-0.1433,ECONOMIC,ISM
+109,2024-04-21,Freight Cost Index,115.3046,-1.9283,ECONOMIC,Industry Association
+110,2024-04-21,Steel Demand Index,110.7555,-1.7846,COMMODITY,Industry Association
+111,2024-04-21,Semiconductor Demand Index,89.5849,-1.9654,INDUSTRY,ISM
+112,2024-04-21,Chemical Production Index,104.2958,-0.0257,INDUSTRY,Industry Association
+113,2024-04-28,Construction Starts Index,102.3132,-0.9013,ECONOMIC,Federal Reserve
+114,2024-04-28,Clinical Trial Spend ($B),2.5384,-2.2605,INDUSTRY,Federal Reserve
+115,2024-04-28,Industrial Production Index,99.048,-4.2586,ECONOMIC,Federal Reserve
+116,2024-04-28,Manufacturing PMI,49.0913,-0.5874,ECONOMIC,Federal Reserve
+117,2024-04-28,Freight Cost Index,115.4325,1.6313,ECONOMIC,Federal Reserve
+118,2024-04-28,Steel Demand Index,109.0645,-1.4247,COMMODITY,Federal Reserve
+119,2024-04-28,Semiconductor Demand Index,92.2477,-1.553,INDUSTRY,Industry Association
+120,2024-04-28,Chemical Production Index,98.9471,-1.03,INDUSTRY,Federal Reserve
+121,2024-05-05,Construction Starts Index,101.8114,0.9348,ECONOMIC,Federal Reserve
+122,2024-05-05,Clinical Trial Spend ($B),2.6556,-5.588,INDUSTRY,Census Bureau
+123,2024-05-05,Industrial Production Index,96.6521,-0.0495,ECONOMIC,ISM
+124,2024-05-05,Manufacturing PMI,48.6051,-0.7132,ECONOMIC,ISM
+125,2024-05-05,Freight Cost Index,118.3504,1.1079,ECONOMIC,Federal Reserve
+126,2024-05-05,Steel Demand Index,100.8214,-0.7162,COMMODITY,Federal Reserve
+127,2024-05-05,Semiconductor Demand Index,94.2147,-0.7,INDUSTRY,Census Bureau
+128,2024-05-05,Chemical Production Index,101.4336,-3.5357,INDUSTRY,Industry Association
+129,2024-05-12,Construction Starts Index,97.2042,-0.0254,ECONOMIC,Federal Reserve
+130,2024-05-12,Clinical Trial Spend ($B),2.5706,0.0598,INDUSTRY,ISM
+131,2024-05-12,Industrial Production Index,97.9017,-0.0682,ECONOMIC,Industry Association
+132,2024-05-12,Manufacturing PMI,51.1127,0.7424,ECONOMIC,ISM
+133,2024-05-12,Freight Cost Index,117.8111,-1.6012,ECONOMIC,Census Bureau
+134,2024-05-12,Steel Demand Index,116.3741,1.5658,COMMODITY,ISM
+135,2024-05-12,Semiconductor Demand Index,96.6654,-2.5813,INDUSTRY,ISM
+136,2024-05-12,Chemical Production Index,102.5212,1.9803,INDUSTRY,Federal Reserve
+137,2024-05-19,Construction Starts Index,96.8268,-2.3712,ECONOMIC,Federal Reserve
+138,2024-05-19,Clinical Trial Spend ($B),2.4456,1.2432,INDUSTRY,Census Bureau
+139,2024-05-19,Industrial Production Index,98.9083,2.4479,ECONOMIC,Census Bureau
+140,2024-05-19,Manufacturing PMI,51.4748,0.5147,ECONOMIC,Census Bureau
+141,2024-05-19,Freight Cost Index,118.6329,3.982,ECONOMIC,Census Bureau
+142,2024-05-19,Steel Demand Index,107.1151,1.5534,COMMODITY,Census Bureau
+143,2024-05-19,Semiconductor Demand Index,101.0661,1.4268,INDUSTRY,ISM
+144,2024-05-19,Chemical Production Index,99.3501,1.9294,INDUSTRY,Federal Reserve
+145,2024-05-26,Construction Starts Index,98.7727,-2.5223,ECONOMIC,Census Bureau
+146,2024-05-26,Clinical Trial Spend ($B),2.5036,-0.0772,INDUSTRY,Census Bureau
+147,2024-05-26,Industrial Production Index,95.9337,-0.8488,ECONOMIC,ISM
+148,2024-05-26,Manufacturing PMI,50.9328,1.635,ECONOMIC,ISM
+149,2024-05-26,Freight Cost Index,121.9603,0.9738,ECONOMIC,ISM
+150,2024-05-26,Steel Demand Index,105.2298,1.3914,COMMODITY,Federal Reserve
+151,2024-05-26,Semiconductor Demand Index,92.8572,1.0476,INDUSTRY,Federal Reserve
+152,2024-05-26,Chemical Production Index,105.6187,-2.2817,INDUSTRY,Industry Association
+153,2024-06-02,Construction Starts Index,102.715,0.5465,ECONOMIC,ISM
+154,2024-06-02,Clinical Trial Spend ($B),2.3739,1.6163,INDUSTRY,Federal Reserve
+155,2024-06-02,Industrial Production Index,97.8435,0.4735,ECONOMIC,Census Bureau
+156,2024-06-02,Manufacturing PMI,49.9633,-2.0387,ECONOMIC,ISM
+157,2024-06-02,Freight Cost Index,126.9561,-1.6683,ECONOMIC,Census Bureau
+158,2024-06-02,Steel Demand Index,114.0635,-0.5172,COMMODITY,Census Bureau
+159,2024-06-02,Semiconductor Demand Index,92.8556,1.6033,INDUSTRY,ISM
+160,2024-06-02,Chemical Production Index,105.4551,0.5664,INDUSTRY,Industry Association
+161,2024-06-09,Construction Starts Index,99.0513,-0.8919,ECONOMIC,Census Bureau
+162,2024-06-09,Clinical Trial Spend ($B),2.2449,-0.6839,INDUSTRY,Census Bureau
+163,2024-06-09,Industrial Production Index,97.8772,-0.38,ECONOMIC,Federal Reserve
+164,2024-06-09,Manufacturing PMI,49.1689,-2.1391,ECONOMIC,ISM
+165,2024-06-09,Freight Cost Index,109.7237,1.5609,ECONOMIC,ISM
+166,2024-06-09,Steel Demand Index,113.3954,-1.1348,COMMODITY,Industry Association
+167,2024-06-09,Semiconductor Demand Index,96.4907,-1.1496,INDUSTRY,Industry Association
+168,2024-06-09,Chemical Production Index,100.5659,-1.3712,INDUSTRY,ISM
+169,2024-06-16,Construction Starts Index,100.9984,0.6129,ECONOMIC,Census Bureau
+170,2024-06-16,Clinical Trial Spend ($B),2.2457,-2.5637,INDUSTRY,ISM
+171,2024-06-16,Industrial Production Index,98.8756,1.7309,ECONOMIC,Census Bureau
+172,2024-06-16,Manufacturing PMI,50.3337,0.319,ECONOMIC,ISM
+173,2024-06-16,Freight Cost Index,120.2095,-3.0963,ECONOMIC,Census Bureau
+174,2024-06-16,Steel Demand Index,109.7401,-1.1969,COMMODITY,Industry Association
+175,2024-06-16,Semiconductor Demand Index,94.227,2.9262,INDUSTRY,Federal Reserve
+176,2024-06-16,Chemical Production Index,102.7066,-0.153,INDUSTRY,Federal Reserve
+177,2024-06-23,Construction Starts Index,102.1747,-0.1446,ECONOMIC,Federal Reserve
+178,2024-06-23,Clinical Trial Spend ($B),2.6529,2.6214,INDUSTRY,Federal Reserve
+179,2024-06-23,Industrial Production Index,98.1389,1.711,ECONOMIC,Industry Association
+180,2024-06-23,Manufacturing PMI,49.82,2.4156,ECONOMIC,Federal Reserve
+181,2024-06-23,Freight Cost Index,116.9728,-0.2232,ECONOMIC,Industry Association
+182,2024-06-23,Steel Demand Index,113.8537,-0.7785,COMMODITY,Census Bureau
+183,2024-06-23,Semiconductor Demand Index,96.4684,3.6785,INDUSTRY,Census Bureau
+184,2024-06-23,Chemical Production Index,102.4061,-1.3955,INDUSTRY,Industry Association
+185,2024-06-30,Construction Starts Index,101.8555,-1.9998,ECONOMIC,ISM
+186,2024-06-30,Clinical Trial Spend ($B),2.4216,0.189,INDUSTRY,ISM
+187,2024-06-30,Industrial Production Index,96.4283,0.0761,ECONOMIC,Census Bureau
+188,2024-06-30,Manufacturing PMI,49.9385,-1.8115,ECONOMIC,Industry Association
+189,2024-06-30,Freight Cost Index,121.1238,-1.1029,ECONOMIC,Census Bureau
+190,2024-06-30,Steel Demand Index,114.7148,3.4129,COMMODITY,Federal Reserve
+191,2024-06-30,Semiconductor Demand Index,92.2405,0.888,INDUSTRY,Federal Reserve
+192,2024-06-30,Chemical Production Index,103.931,1.8632,INDUSTRY,Census Bureau
+193,2024-07-07,Construction Starts Index,94.747,2.0481,ECONOMIC,Federal Reserve
+194,2024-07-07,Clinical Trial Spend ($B),2.6178,0.3019,INDUSTRY,Census Bureau
+195,2024-07-07,Industrial Production Index,100.1889,2.5373,ECONOMIC,Federal Reserve
+196,2024-07-07,Manufacturing PMI,49.2683,-0.6352,ECONOMIC,Industry Association
+197,2024-07-07,Freight Cost Index,124.6161,1.1882,ECONOMIC,ISM
+198,2024-07-07,Steel Demand Index,112.5281,0.1908,COMMODITY,Federal Reserve
+199,2024-07-07,Semiconductor Demand Index,101.5216,-1.8445,INDUSTRY,ISM
+200,2024-07-07,Chemical Production Index,103.3343,-0.4289,INDUSTRY,ISM
+201,2024-07-14,Construction Starts Index,99.0419,1.1985,ECONOMIC,Federal Reserve
+202,2024-07-14,Clinical Trial Spend ($B),2.7417,-4.2783,INDUSTRY,Federal Reserve
+203,2024-07-14,Industrial Production Index,100.1859,-1.6554,ECONOMIC,Federal Reserve
+204,2024-07-14,Manufacturing PMI,49.6986,1.7751,ECONOMIC,Industry Association
+205,2024-07-14,Freight Cost Index,121.7884,-1.8856,ECONOMIC,Industry Association
+206,2024-07-14,Steel Demand Index,112.1932,0.2616,COMMODITY,Federal Reserve
+207,2024-07-14,Semiconductor Demand Index,91.3802,2.0558,INDUSTRY,Census Bureau
+208,2024-07-14,Chemical Production Index,103.7023,3.6592,INDUSTRY,Census Bureau
+209,2024-07-21,Construction Starts Index,100.242,0.6172,ECONOMIC,Census Bureau
+210,2024-07-21,Clinical Trial Spend ($B),2.2036,3.0314,INDUSTRY,ISM
+211,2024-07-21,Industrial Production Index,98.3627,0.1582,ECONOMIC,Federal Reserve
+212,2024-07-21,Manufacturing PMI,47.7987,0.4425,ECONOMIC,Federal Reserve
+213,2024-07-21,Freight Cost Index,110.2046,2.5349,ECONOMIC,ISM
+214,2024-07-21,Steel Demand Index,114.0388,-4.3857,COMMODITY,Census Bureau
+215,2024-07-21,Semiconductor Demand Index,97.5376,1.4335,INDUSTRY,ISM
+216,2024-07-21,Chemical Production Index,98.9063,-1.4165,INDUSTRY,ISM
+217,2024-07-28,Construction Starts Index,99.9944,4.0649,ECONOMIC,ISM
+218,2024-07-28,Clinical Trial Spend ($B),2.5476,-1.1789,INDUSTRY,Census Bureau
+219,2024-07-28,Industrial Production Index,98.0984,-0.7915,ECONOMIC,Federal Reserve
+220,2024-07-28,Manufacturing PMI,50.0224,-2.4511,ECONOMIC,Census Bureau
+221,2024-07-28,Freight Cost Index,119.3689,1.2664,ECONOMIC,Federal Reserve
+222,2024-07-28,Steel Demand Index,108.7957,-2.7785,COMMODITY,Census Bureau
+223,2024-07-28,Semiconductor Demand Index,100.0628,1.3163,INDUSTRY,Federal Reserve
+224,2024-07-28,Chemical Production Index,102.8977,-1.5652,INDUSTRY,Industry Association
+225,2024-08-04,Construction Starts Index,104.7307,-2.9183,ECONOMIC,Industry Association
+226,2024-08-04,Clinical Trial Spend ($B),2.5144,-2.7001,INDUSTRY,Industry Association
+227,2024-08-04,Industrial Production Index,99.849,0.2011,ECONOMIC,ISM
+228,2024-08-04,Manufacturing PMI,51.8485,-1.2665,ECONOMIC,Census Bureau
+229,2024-08-04,Freight Cost Index,114.3047,-1.3681,ECONOMIC,ISM
+230,2024-08-04,Steel Demand Index,111.1575,1.5837,COMMODITY,Census Bureau
+231,2024-08-04,Semiconductor Demand Index,89.4819,-0.3914,INDUSTRY,Industry Association
+232,2024-08-04,Chemical Production Index,98.1432,3.4326,INDUSTRY,Census Bureau
+233,2024-08-11,Construction Starts Index,98.8856,-0.1983,ECONOMIC,Census Bureau
+234,2024-08-11,Clinical Trial Spend ($B),2.5592,1.7626,INDUSTRY,Federal Reserve
+235,2024-08-11,Industrial Production Index,98.5113,0.3232,ECONOMIC,Census Bureau
+236,2024-08-11,Manufacturing PMI,51.8209,0.9973,ECONOMIC,ISM
+237,2024-08-11,Freight Cost Index,127.8101,4.814,ECONOMIC,Federal Reserve
+238,2024-08-11,Steel Demand Index,109.4461,-0.236,COMMODITY,Federal Reserve
+239,2024-08-11,Semiconductor Demand Index,86.3774,0.025,INDUSTRY,Industry Association
+240,2024-08-11,Chemical Production Index,101.1095,-1.3393,INDUSTRY,Federal Reserve
+241,2024-08-18,Construction Starts Index,98.8918,-3.3202,ECONOMIC,Federal Reserve
+242,2024-08-18,Clinical Trial Spend ($B),2.6744,1.1009,INDUSTRY,Census Bureau
+243,2024-08-18,Industrial Production Index,98.8185,-2.8164,ECONOMIC,Federal Reserve
+244,2024-08-18,Manufacturing PMI,48.8961,-3.2596,ECONOMIC,Industry Association
+245,2024-08-18,Freight Cost Index,123.1757,3.0521,ECONOMIC,Federal Reserve
+246,2024-08-18,Steel Demand Index,112.4231,-2.5834,COMMODITY,Industry Association
+247,2024-08-18,Semiconductor Demand Index,91.9736,0.8044,INDUSTRY,ISM
+248,2024-08-18,Chemical Production Index,101.5708,-1.8634,INDUSTRY,Industry Association
+249,2024-08-25,Construction Starts Index,107.4083,-0.6096,ECONOMIC,Industry Association
+250,2024-08-25,Clinical Trial Spend ($B),2.6645,-1.6688,INDUSTRY,Industry Association
+251,2024-08-25,Industrial Production Index,98.7485,0.2065,ECONOMIC,ISM
+252,2024-08-25,Manufacturing PMI,51.2257,0.0545,ECONOMIC,Federal Reserve
+253,2024-08-25,Freight Cost Index,110.6289,1.8571,ECONOMIC,Industry Association
+254,2024-08-25,Steel Demand Index,112.7063,-3.3175,COMMODITY,Census Bureau
+255,2024-08-25,Semiconductor Demand Index,99.3064,2.34,INDUSTRY,Industry Association
+256,2024-08-25,Chemical Production Index,102.1335,0.4619,INDUSTRY,Federal Reserve
+257,2024-09-01,Construction Starts Index,100.0069,-2.6685,ECONOMIC,Industry Association
+258,2024-09-01,Clinical Trial Spend ($B),2.5247,-0.91,INDUSTRY,Industry Association
+259,2024-09-01,Industrial Production Index,99.3609,-0.4406,ECONOMIC,Census Bureau
+260,2024-09-01,Manufacturing PMI,49.7455,0.5727,ECONOMIC,Census Bureau
+261,2024-09-01,Freight Cost Index,116.1341,-2.3144,ECONOMIC,Federal Reserve
+262,2024-09-01,Steel Demand Index,107.908,4.3463,COMMODITY,Federal Reserve
+263,2024-09-01,Semiconductor Demand Index,102.2539,-1.1246,INDUSTRY,ISM
+264,2024-09-01,Chemical Production Index,105.2735,0.2607,INDUSTRY,Census Bureau
+265,2024-09-08,Construction Starts Index,97.9104,3.2585,ECONOMIC,Industry Association
+266,2024-09-08,Clinical Trial Spend ($B),2.3716,-0.7638,INDUSTRY,Industry Association
+267,2024-09-08,Industrial Production Index,98.062,1.3498,ECONOMIC,Federal Reserve
+268,2024-09-08,Manufacturing PMI,49.2907,-2.3284,ECONOMIC,Industry Association
+269,2024-09-08,Freight Cost Index,123.8251,0.5966,ECONOMIC,ISM
+270,2024-09-08,Steel Demand Index,103.7715,0.5125,COMMODITY,Federal Reserve
+271,2024-09-08,Semiconductor Demand Index,95.4401,-0.445,INDUSTRY,ISM
+272,2024-09-08,Chemical Production Index,103.6733,-1.9661,INDUSTRY,ISM
+273,2024-09-15,Construction Starts Index,103.684,-0.2439,ECONOMIC,Federal Reserve
+274,2024-09-15,Clinical Trial Spend ($B),2.5242,0.346,INDUSTRY,ISM
+275,2024-09-15,Industrial Production Index,95.6157,-0.328,ECONOMIC,Industry Association
+276,2024-09-15,Manufacturing PMI,51.6331,-1.5807,ECONOMIC,ISM
+277,2024-09-15,Freight Cost Index,125.3979,0.4306,ECONOMIC,Census Bureau
+278,2024-09-15,Steel Demand Index,114.3134,0.4089,COMMODITY,Industry Association
+279,2024-09-15,Semiconductor Demand Index,100.9572,2.5625,INDUSTRY,Census Bureau
+280,2024-09-15,Chemical Production Index,99.5677,-2.1077,INDUSTRY,Industry Association
+281,2024-09-22,Construction Starts Index,107.575,3.4237,ECONOMIC,Federal Reserve
+282,2024-09-22,Clinical Trial Spend ($B),2.5298,-0.581,INDUSTRY,Federal Reserve
+283,2024-09-22,Industrial Production Index,98.094,-3.6153,ECONOMIC,Federal Reserve
+284,2024-09-22,Manufacturing PMI,50.2568,-2.4011,ECONOMIC,Census Bureau
+285,2024-09-22,Freight Cost Index,118.3498,1.6673,ECONOMIC,Industry Association
+286,2024-09-22,Steel Demand Index,120.3324,-1.7893,COMMODITY,Industry Association
+287,2024-09-22,Semiconductor Demand Index,86.8291,-3.6907,INDUSTRY,Federal Reserve
+288,2024-09-22,Chemical Production Index,99.0982,-0.0406,INDUSTRY,Industry Association
+289,2024-09-29,Construction Starts Index,93.2923,3.5626,ECONOMIC,Federal Reserve
+290,2024-09-29,Clinical Trial Spend ($B),2.6297,3.6657,INDUSTRY,Industry Association
+291,2024-09-29,Industrial Production Index,95.749,-0.6592,ECONOMIC,Industry Association
+292,2024-09-29,Manufacturing PMI,51.3404,2.7876,ECONOMIC,Federal Reserve
+293,2024-09-29,Freight Cost Index,125.128,-2.3412,ECONOMIC,Census Bureau
+294,2024-09-29,Steel Demand Index,115.4713,-3.0259,COMMODITY,ISM
+295,2024-09-29,Semiconductor Demand Index,88.91,-1.8042,INDUSTRY,ISM
+296,2024-09-29,Chemical Production Index,103.4682,-2.0871,INDUSTRY,ISM
+297,2024-10-06,Construction Starts Index,97.7975,0.9331,ECONOMIC,Industry Association
+298,2024-10-06,Clinical Trial Spend ($B),2.4925,-1.4562,INDUSTRY,Industry Association
+299,2024-10-06,Industrial Production Index,100.5545,0.9734,ECONOMIC,Census Bureau
+300,2024-10-06,Manufacturing PMI,49.6066,1.5977,ECONOMIC,Federal Reserve
+301,2024-10-06,Freight Cost Index,122.6302,1.9211,ECONOMIC,Census Bureau
+302,2024-10-06,Steel Demand Index,105.4646,2.34,COMMODITY,Census Bureau
+303,2024-10-06,Semiconductor Demand Index,89.9264,-1.9949,INDUSTRY,ISM
+304,2024-10-06,Chemical Production Index,102.2421,-1.3416,INDUSTRY,Census Bureau
+305,2024-10-13,Construction Starts Index,94.8065,2.3371,ECONOMIC,Census Bureau
+306,2024-10-13,Clinical Trial Spend ($B),2.8534,-1.4579,INDUSTRY,Federal Reserve
+307,2024-10-13,Industrial Production Index,98.0612,-4.0689,ECONOMIC,Federal Reserve
+308,2024-10-13,Manufacturing PMI,51.108,-0.5746,ECONOMIC,Federal Reserve
+309,2024-10-13,Freight Cost Index,120.2849,1.3268,ECONOMIC,ISM
+310,2024-10-13,Steel Demand Index,113.4196,-2.8427,COMMODITY,Industry Association
+311,2024-10-13,Semiconductor Demand Index,83.3469,2.4918,INDUSTRY,Industry Association
+312,2024-10-13,Chemical Production Index,101.879,-0.2212,INDUSTRY,Federal Reserve
+313,2024-10-20,Construction Starts Index,97.9082,-0.5707,ECONOMIC,Federal Reserve
+314,2024-10-20,Clinical Trial Spend ($B),2.7399,-1.0379,INDUSTRY,ISM
+315,2024-10-20,Industrial Production Index,99.8115,-0.8977,ECONOMIC,Federal Reserve
+316,2024-10-20,Manufacturing PMI,50.6616,-0.4455,ECONOMIC,ISM
+317,2024-10-20,Freight Cost Index,112.2998,1.4019,ECONOMIC,ISM
+318,2024-10-20,Steel Demand Index,111.8081,-2.0121,COMMODITY,Industry Association
+319,2024-10-20,Semiconductor Demand Index,98.6165,1.6235,INDUSTRY,Federal Reserve
+320,2024-10-20,Chemical Production Index,102.479,-1.2821,INDUSTRY,ISM
+321,2024-10-27,Construction Starts Index,103.2826,-2.3599,ECONOMIC,Industry Association
+322,2024-10-27,Clinical Trial Spend ($B),2.6211,-0.4346,INDUSTRY,Census Bureau
+323,2024-10-27,Industrial Production Index,98.2318,1.2739,ECONOMIC,Federal Reserve
+324,2024-10-27,Manufacturing PMI,49.4002,-2.6092,ECONOMIC,Census Bureau
+325,2024-10-27,Freight Cost Index,130.3366,-2.4846,ECONOMIC,Federal Reserve
+326,2024-10-27,Steel Demand Index,110.2285,-0.5989,COMMODITY,Federal Reserve
+327,2024-10-27,Semiconductor Demand Index,90.4187,-3.0714,INDUSTRY,Industry Association
+328,2024-10-27,Chemical Production Index,104.1501,-2.5683,INDUSTRY,Census Bureau
+329,2024-11-03,Construction Starts Index,98.1382,2.0782,ECONOMIC,ISM
+330,2024-11-03,Clinical Trial Spend ($B),2.4934,-0.2663,INDUSTRY,ISM
+331,2024-11-03,Industrial Production Index,98.5716,-1.0097,ECONOMIC,Federal Reserve
+332,2024-11-03,Manufacturing PMI,51.3084,-0.1751,ECONOMIC,Census Bureau
+333,2024-11-03,Freight Cost Index,121.2269,-1.1176,ECONOMIC,Federal Reserve
+334,2024-11-03,Steel Demand Index,115.6465,0.8156,COMMODITY,Industry Association
+335,2024-11-03,Semiconductor Demand Index,93.1103,-1.6461,INDUSTRY,Industry Association
+336,2024-11-03,Chemical Production Index,103.7571,-3.4201,INDUSTRY,Industry Association
+337,2024-11-10,Construction Starts Index,97.2695,-1.2921,ECONOMIC,Industry Association
+338,2024-11-10,Clinical Trial Spend ($B),2.6179,-1.6911,INDUSTRY,Federal Reserve
+339,2024-11-10,Industrial Production Index,96.8574,-0.9506,ECONOMIC,Federal Reserve
+340,2024-11-10,Manufacturing PMI,50.5857,-2.3104,ECONOMIC,ISM
+341,2024-11-10,Freight Cost Index,114.3633,-0.4539,ECONOMIC,ISM
+342,2024-11-10,Steel Demand Index,108.1364,1.5419,COMMODITY,Federal Reserve
+343,2024-11-10,Semiconductor Demand Index,95.3271,-2.0074,INDUSTRY,Census Bureau
+344,2024-11-10,Chemical Production Index,99.5103,-3.6017,INDUSTRY,Census Bureau
+345,2024-11-17,Construction Starts Index,98.9102,0.6783,ECONOMIC,ISM
+346,2024-11-17,Clinical Trial Spend ($B),2.4598,-0.9632,INDUSTRY,Census Bureau
+347,2024-11-17,Industrial Production Index,99.1883,-0.0641,ECONOMIC,Industry Association
+348,2024-11-17,Manufacturing PMI,49.6861,-0.3651,ECONOMIC,Census Bureau
+349,2024-11-17,Freight Cost Index,111.5274,1.541,ECONOMIC,Federal Reserve
+350,2024-11-17,Steel Demand Index,114.7308,-2.0299,COMMODITY,ISM
+351,2024-11-17,Semiconductor Demand Index,96.8899,-0.3038,INDUSTRY,Census Bureau
+352,2024-11-17,Chemical Production Index,103.7865,-0.8303,INDUSTRY,ISM
+353,2024-11-24,Construction Starts Index,103.7416,-2.0594,ECONOMIC,ISM
+354,2024-11-24,Clinical Trial Spend ($B),2.4647,1.5906,INDUSTRY,Federal Reserve
+355,2024-11-24,Industrial Production Index,97.0865,1.2131,ECONOMIC,Federal Reserve
+356,2024-11-24,Manufacturing PMI,50.3315,0.5755,ECONOMIC,ISM
+357,2024-11-24,Freight Cost Index,124.5535,1.8822,ECONOMIC,Industry Association
+358,2024-11-24,Steel Demand Index,106.0321,-0.77,COMMODITY,Industry Association
+359,2024-11-24,Semiconductor Demand Index,95.9749,-4.0393,INDUSTRY,ISM
+360,2024-11-24,Chemical Production Index,99.3462,-2.5326,INDUSTRY,ISM
+361,2024-12-01,Construction Starts Index,98.8792,-1.4569,ECONOMIC,Industry Association
+362,2024-12-01,Clinical Trial Spend ($B),2.6177,-0.1962,INDUSTRY,Federal Reserve
+363,2024-12-01,Industrial Production Index,99.934,-0.6774,ECONOMIC,Federal Reserve
+364,2024-12-01,Manufacturing PMI,50.0829,-2.4816,ECONOMIC,Industry Association
+365,2024-12-01,Freight Cost Index,120.1522,0.9844,ECONOMIC,Census Bureau
+366,2024-12-01,Steel Demand Index,113.3799,4.176,COMMODITY,Federal Reserve
+367,2024-12-01,Semiconductor Demand Index,100.1748,-2.2923,INDUSTRY,Federal Reserve
+368,2024-12-01,Chemical Production Index,100.4189,-1.0363,INDUSTRY,Industry Association
+369,2024-12-08,Construction Starts Index,97.3792,-1.0147,ECONOMIC,Census Bureau
+370,2024-12-08,Clinical Trial Spend ($B),2.6883,-1.8078,INDUSTRY,Industry Association
+371,2024-12-08,Industrial Production Index,97.9282,0.1814,ECONOMIC,Industry Association
+372,2024-12-08,Manufacturing PMI,52.2257,-1.0586,ECONOMIC,Federal Reserve
+373,2024-12-08,Freight Cost Index,121.7184,0.3945,ECONOMIC,Census Bureau
+374,2024-12-08,Steel Demand Index,110.3978,-0.1445,COMMODITY,Federal Reserve
+375,2024-12-08,Semiconductor Demand Index,100.0642,1.9897,INDUSTRY,Census Bureau
+376,2024-12-08,Chemical Production Index,101.0619,1.4334,INDUSTRY,Industry Association
+377,2024-12-15,Construction Starts Index,104.2794,2.1755,ECONOMIC,ISM
+378,2024-12-15,Clinical Trial Spend ($B),2.1948,0.0195,INDUSTRY,Census Bureau
+379,2024-12-15,Industrial Production Index,96.7214,2.006,ECONOMIC,ISM
+380,2024-12-15,Manufacturing PMI,49.3219,-1.554,ECONOMIC,Industry Association
+381,2024-12-15,Freight Cost Index,120.2643,1.2555,ECONOMIC,Federal Reserve
+382,2024-12-15,Steel Demand Index,111.0083,-0.079,COMMODITY,Industry Association
+383,2024-12-15,Semiconductor Demand Index,93.2397,0.9052,INDUSTRY,Federal Reserve
+384,2024-12-15,Chemical Production Index,104.2137,-1.2325,INDUSTRY,Industry Association
+385,2024-12-22,Construction Starts Index,99.4512,-1.899,ECONOMIC,ISM
+386,2024-12-22,Clinical Trial Spend ($B),2.6368,2.364,INDUSTRY,Federal Reserve
+387,2024-12-22,Industrial Production Index,101.7186,0.258,ECONOMIC,Census Bureau
+388,2024-12-22,Manufacturing PMI,49.8489,-1.2586,ECONOMIC,Federal Reserve
+389,2024-12-22,Freight Cost Index,117.0702,0.3426,ECONOMIC,ISM
+390,2024-12-22,Steel Demand Index,105.7625,-2.0521,COMMODITY,Census Bureau
+391,2024-12-22,Semiconductor Demand Index,104.7452,0.0617,INDUSTRY,Industry Association
+392,2024-12-22,Chemical Production Index,100.6877,-3.0415,INDUSTRY,Industry Association
+393,2024-12-29,Construction Starts Index,103.7206,-0.4998,ECONOMIC,ISM
+394,2024-12-29,Clinical Trial Spend ($B),2.4484,0.3408,INDUSTRY,ISM
+395,2024-12-29,Industrial Production Index,99.0262,1.5462,ECONOMIC,Industry Association
+396,2024-12-29,Manufacturing PMI,51.4051,3.3336,ECONOMIC,Census Bureau
+397,2024-12-29,Freight Cost Index,114.394,-2.1791,ECONOMIC,Census Bureau
+398,2024-12-29,Steel Demand Index,107.3288,-1.5169,COMMODITY,Federal Reserve
+399,2024-12-29,Semiconductor Demand Index,97.0825,1.4114,INDUSTRY,Census Bureau
+400,2024-12-29,Chemical Production Index,102.6658,-1.1493,INDUSTRY,Census Bureau
+401,2025-01-05,Construction Starts Index,96.2754,5.9705,ECONOMIC,Census Bureau
+402,2025-01-05,Clinical Trial Spend ($B),2.5268,1.3897,INDUSTRY,ISM
+403,2025-01-05,Industrial Production Index,98.5149,-2.7309,ECONOMIC,Industry Association
+404,2025-01-05,Manufacturing PMI,50.0026,-0.452,ECONOMIC,Federal Reserve
+405,2025-01-05,Freight Cost Index,119.0221,0.8388,ECONOMIC,Industry Association
+406,2025-01-05,Steel Demand Index,109.3479,-1.2322,COMMODITY,Census Bureau
+407,2025-01-05,Semiconductor Demand Index,99.5427,-3.1445,INDUSTRY,ISM
+408,2025-01-05,Chemical Production Index,102.3309,3.5339,INDUSTRY,Industry Association
+409,2025-01-12,Construction Starts Index,105.3616,0.4813,ECONOMIC,Industry Association
+410,2025-01-12,Clinical Trial Spend ($B),2.5653,-0.3279,INDUSTRY,ISM
+411,2025-01-12,Industrial Production Index,102.2663,0.7286,ECONOMIC,Industry Association
+412,2025-01-12,Manufacturing PMI,49.8903,-0.6197,ECONOMIC,Census Bureau
+413,2025-01-12,Freight Cost Index,121.966,0.2326,ECONOMIC,Industry Association
+414,2025-01-12,Steel Demand Index,111.2053,0.3847,COMMODITY,Federal Reserve
+415,2025-01-12,Semiconductor Demand Index,90.979,-0.4096,INDUSTRY,Census Bureau
+416,2025-01-12,Chemical Production Index,103.8371,0.8791,INDUSTRY,ISM
+417,2025-01-19,Construction Starts Index,98.5119,-1.4403,ECONOMIC,Census Bureau
+418,2025-01-19,Clinical Trial Spend ($B),2.501,-0.7574,INDUSTRY,Federal Reserve
+419,2025-01-19,Industrial Production Index,98.1404,2.1173,ECONOMIC,ISM
+420,2025-01-19,Manufacturing PMI,48.1638,-0.9887,ECONOMIC,ISM
+421,2025-01-19,Freight Cost Index,122.9523,-1.5269,ECONOMIC,Census Bureau
+422,2025-01-19,Steel Demand Index,106.0171,-2.5118,COMMODITY,Industry Association
+423,2025-01-19,Semiconductor Demand Index,98.6308,-1.4366,INDUSTRY,Census Bureau
+424,2025-01-19,Chemical Production Index,103.8553,1.4036,INDUSTRY,Federal Reserve
+425,2025-01-26,Construction Starts Index,101.3713,-0.4569,ECONOMIC,Industry Association
+426,2025-01-26,Clinical Trial Spend ($B),2.4409,1.1616,INDUSTRY,Federal Reserve
+427,2025-01-26,Industrial Production Index,98.4215,0.2001,ECONOMIC,Federal Reserve
+428,2025-01-26,Manufacturing PMI,54.0996,-0.7017,ECONOMIC,Census Bureau
+429,2025-01-26,Freight Cost Index,126.8982,3.6582,ECONOMIC,Industry Association
+430,2025-01-26,Steel Demand Index,119.9734,1.5967,COMMODITY,Census Bureau
+431,2025-01-26,Semiconductor Demand Index,90.3092,1.3007,INDUSTRY,Census Bureau
+432,2025-01-26,Chemical Production Index,102.8617,0.5742,INDUSTRY,Census Bureau
+433,2025-02-02,Construction Starts Index,104.7562,0.1949,ECONOMIC,Census Bureau
+434,2025-02-02,Clinical Trial Spend ($B),2.5615,1.9501,INDUSTRY,ISM
+435,2025-02-02,Industrial Production Index,98.8075,-1.6879,ECONOMIC,Industry Association
+436,2025-02-02,Manufacturing PMI,48.7509,-0.8978,ECONOMIC,Industry Association
+437,2025-02-02,Freight Cost Index,120.3218,-0.7144,ECONOMIC,ISM
+438,2025-02-02,Steel Demand Index,114.2291,-2.532,COMMODITY,Industry Association
+439,2025-02-02,Semiconductor Demand Index,99.3174,-2.5914,INDUSTRY,Census Bureau
+440,2025-02-02,Chemical Production Index,104.4095,-2.3143,INDUSTRY,Federal Reserve
+441,2025-02-09,Construction Starts Index,100.6684,-0.7662,ECONOMIC,Census Bureau
+442,2025-02-09,Clinical Trial Spend ($B),2.7749,-2.5581,INDUSTRY,Industry Association
+443,2025-02-09,Industrial Production Index,99.015,-1.6231,ECONOMIC,Industry Association
+444,2025-02-09,Manufacturing PMI,49.5872,-2.8154,ECONOMIC,Industry Association
+445,2025-02-09,Freight Cost Index,120.2312,-2.5832,ECONOMIC,Federal Reserve
+446,2025-02-09,Steel Demand Index,109.2935,-1.5068,COMMODITY,Census Bureau
+447,2025-02-09,Semiconductor Demand Index,95.9326,-3.5936,INDUSTRY,Industry Association
+448,2025-02-09,Chemical Production Index,103.0549,-0.6184,INDUSTRY,Industry Association
+449,2025-02-16,Construction Starts Index,94.9926,2.5121,ECONOMIC,Census Bureau
+450,2025-02-16,Clinical Trial Spend ($B),2.5254,0.1386,INDUSTRY,Industry Association
+451,2025-02-16,Industrial Production Index,98.7037,-0.8582,ECONOMIC,ISM
+452,2025-02-16,Manufacturing PMI,50.2797,1.1384,ECONOMIC,Industry Association
+453,2025-02-16,Freight Cost Index,115.3276,-0.2921,ECONOMIC,ISM
+454,2025-02-16,Steel Demand Index,111.4772,1.2629,COMMODITY,Industry Association
+455,2025-02-16,Semiconductor Demand Index,100.2102,-2.7005,INDUSTRY,Federal Reserve
+456,2025-02-16,Chemical Production Index,99.9229,2.0965,INDUSTRY,Industry Association
+457,2025-02-23,Construction Starts Index,102.9622,3.5977,ECONOMIC,Federal Reserve
+458,2025-02-23,Clinical Trial Spend ($B),2.539,2.5169,INDUSTRY,ISM
+459,2025-02-23,Industrial Production Index,99.3028,-1.2325,ECONOMIC,Federal Reserve
+460,2025-02-23,Manufacturing PMI,51.3484,4.3134,ECONOMIC,Census Bureau
+461,2025-02-23,Freight Cost Index,113.3567,-0.8641,ECONOMIC,ISM
+462,2025-02-23,Steel Demand Index,113.8212,2.1855,COMMODITY,Federal Reserve
+463,2025-02-23,Semiconductor Demand Index,94.0655,0.5779,INDUSTRY,Federal Reserve
+464,2025-02-23,Chemical Production Index,97.7578,-2.4188,INDUSTRY,Federal Reserve
+465,2025-03-02,Construction Starts Index,101.2035,1.4146,ECONOMIC,Census Bureau
+466,2025-03-02,Clinical Trial Spend ($B),2.4133,2.4947,INDUSTRY,Federal Reserve
+467,2025-03-02,Industrial Production Index,99.2892,2.6337,ECONOMIC,Federal Reserve
+468,2025-03-02,Manufacturing PMI,47.6308,-1.0854,ECONOMIC,ISM
+469,2025-03-02,Freight Cost Index,125.686,-0.4893,ECONOMIC,Federal Reserve
+470,2025-03-02,Steel Demand Index,104.9187,2.5667,COMMODITY,Census Bureau
+471,2025-03-02,Semiconductor Demand Index,100.5902,-1.0662,INDUSTRY,Census Bureau
+472,2025-03-02,Chemical Production Index,103.9661,0.2506,INDUSTRY,ISM
+473,2025-03-09,Construction Starts Index,93.4836,0.193,ECONOMIC,Federal Reserve
+474,2025-03-09,Clinical Trial Spend ($B),2.5362,3.0842,INDUSTRY,Census Bureau
+475,2025-03-09,Industrial Production Index,96.7028,2.4559,ECONOMIC,Federal Reserve
+476,2025-03-09,Manufacturing PMI,50.243,0.8292,ECONOMIC,Industry Association
+477,2025-03-09,Freight Cost Index,119.5216,0.483,ECONOMIC,Census Bureau
+478,2025-03-09,Steel Demand Index,106.5654,0.6559,COMMODITY,Census Bureau
+479,2025-03-09,Semiconductor Demand Index,95.4488,3.9092,INDUSTRY,Census Bureau
+480,2025-03-09,Chemical Production Index,100.6204,1.3446,INDUSTRY,Federal Reserve
+481,2025-03-16,Construction Starts Index,100.4226,-2.2206,ECONOMIC,Federal Reserve
+482,2025-03-16,Clinical Trial Spend ($B),2.5868,0.4719,INDUSTRY,Industry Association
+483,2025-03-16,Industrial Production Index,99.1264,0.3367,ECONOMIC,Industry Association
+484,2025-03-16,Manufacturing PMI,48.4151,-0.0933,ECONOMIC,Federal Reserve
+485,2025-03-16,Freight Cost Index,119.5049,-0.1235,ECONOMIC,Federal Reserve
+486,2025-03-16,Steel Demand Index,112.3187,-1.6529,COMMODITY,Industry Association
+487,2025-03-16,Semiconductor Demand Index,100.8992,2.0484,INDUSTRY,Census Bureau
+488,2025-03-16,Chemical Production Index,101.964,-3.2837,INDUSTRY,Federal Reserve
+489,2025-03-23,Construction Starts Index,102.6642,-0.7831,ECONOMIC,Industry Association
+490,2025-03-23,Clinical Trial Spend ($B),2.6486,-0.0775,INDUSTRY,Federal Reserve
+491,2025-03-23,Industrial Production Index,99.1504,2.9767,ECONOMIC,ISM
+492,2025-03-23,Manufacturing PMI,50.357,-0.8911,ECONOMIC,Industry Association
+493,2025-03-23,Freight Cost Index,133.6331,1.6767,ECONOMIC,Industry Association
+494,2025-03-23,Steel Demand Index,110.4347,-2.2017,COMMODITY,Census Bureau
+495,2025-03-23,Semiconductor Demand Index,93.9856,0.1098,INDUSTRY,Federal Reserve
+496,2025-03-23,Chemical Production Index,99.6475,2.956,INDUSTRY,Census Bureau
+497,2025-03-30,Construction Starts Index,103.381,1.2166,ECONOMIC,Industry Association
+498,2025-03-30,Clinical Trial Spend ($B),2.4345,1.7851,INDUSTRY,Census Bureau
+499,2025-03-30,Industrial Production Index,96.617,-1.5389,ECONOMIC,Census Bureau
+500,2025-03-30,Manufacturing PMI,49.5232,-2.8347,ECONOMIC,Industry Association
+501,2025-03-30,Freight Cost Index,114.3808,-1.93,ECONOMIC,Federal Reserve
+502,2025-03-30,Steel Demand Index,111.5554,0.2065,COMMODITY,ISM
+503,2025-03-30,Semiconductor Demand Index,89.6916,-3.9048,INDUSTRY,Census Bureau
+504,2025-03-30,Chemical Production Index,101.953,-1.3967,INDUSTRY,Census Bureau
+505,2025-04-06,Construction Starts Index,95.6896,-0.6408,ECONOMIC,Census Bureau
+506,2025-04-06,Clinical Trial Spend ($B),2.6685,-0.8747,INDUSTRY,Federal Reserve
+507,2025-04-06,Industrial Production Index,98.0901,1.3984,ECONOMIC,Industry Association
+508,2025-04-06,Manufacturing PMI,49.9463,-1.3864,ECONOMIC,Census Bureau
+509,2025-04-06,Freight Cost Index,122.9049,-1.8363,ECONOMIC,Federal Reserve
+510,2025-04-06,Steel Demand Index,110.2845,4.0582,COMMODITY,Industry Association
+511,2025-04-06,Semiconductor Demand Index,101.2306,2.4971,INDUSTRY,ISM
+512,2025-04-06,Chemical Production Index,106.5165,2.9064,INDUSTRY,ISM
+513,2025-04-13,Construction Starts Index,104.5605,-0.1211,ECONOMIC,Federal Reserve
+514,2025-04-13,Clinical Trial Spend ($B),2.4331,0.7214,INDUSTRY,Census Bureau
+515,2025-04-13,Industrial Production Index,96.3747,-1.0545,ECONOMIC,Census Bureau
+516,2025-04-13,Manufacturing PMI,50.0265,0.0399,ECONOMIC,Industry Association
+517,2025-04-13,Freight Cost Index,120.7903,1.964,ECONOMIC,Census Bureau
+518,2025-04-13,Steel Demand Index,108.4407,-1.4096,COMMODITY,Federal Reserve
+519,2025-04-13,Semiconductor Demand Index,94.1381,0.3343,INDUSTRY,Federal Reserve
+520,2025-04-13,Chemical Production Index,102.715,-1.1175,INDUSTRY,Industry Association
+521,2025-04-20,Construction Starts Index,97.9703,0.9037,ECONOMIC,Census Bureau
+522,2025-04-20,Clinical Trial Spend ($B),2.3687,0.0544,INDUSTRY,Industry Association
+523,2025-04-20,Industrial Production Index,99.3677,-2.9576,ECONOMIC,Federal Reserve
+524,2025-04-20,Manufacturing PMI,49.5853,4.3853,ECONOMIC,Federal Reserve
+525,2025-04-20,Freight Cost Index,120.0588,3.724,ECONOMIC,ISM
+526,2025-04-20,Steel Demand Index,112.7637,-3.0495,COMMODITY,ISM
+527,2025-04-20,Semiconductor Demand Index,98.6367,-0.4263,INDUSTRY,ISM
+528,2025-04-20,Chemical Production Index,103.2762,-0.3866,INDUSTRY,Industry Association
+529,2025-04-27,Construction Starts Index,101.3543,-2.2253,ECONOMIC,Industry Association
+530,2025-04-27,Clinical Trial Spend ($B),2.5284,4.7591,INDUSTRY,ISM
+531,2025-04-27,Industrial Production Index,98.0348,-0.3492,ECONOMIC,Federal Reserve
+532,2025-04-27,Manufacturing PMI,49.4302,-1.2959,ECONOMIC,Federal Reserve
+533,2025-04-27,Freight Cost Index,121.9126,-0.4486,ECONOMIC,Industry Association
+534,2025-04-27,Steel Demand Index,106.4082,-2.2278,COMMODITY,Industry Association
+535,2025-04-27,Semiconductor Demand Index,99.7668,-3.5571,INDUSTRY,ISM
+536,2025-04-27,Chemical Production Index,101.9437,0.8861,INDUSTRY,ISM
+537,2025-05-04,Construction Starts Index,94.7366,-0.7244,ECONOMIC,Industry Association
+538,2025-05-04,Clinical Trial Spend ($B),2.6105,1.428,INDUSTRY,Industry Association
+539,2025-05-04,Industrial Production Index,97.9996,0.307,ECONOMIC,Federal Reserve
+540,2025-05-04,Manufacturing PMI,49.5685,2.4213,ECONOMIC,Census Bureau
+541,2025-05-04,Freight Cost Index,120.7644,-2.1473,ECONOMIC,Industry Association
+542,2025-05-04,Steel Demand Index,114.7965,-0.1986,COMMODITY,ISM
+543,2025-05-04,Semiconductor Demand Index,93.1376,0.6818,INDUSTRY,Federal Reserve
+544,2025-05-04,Chemical Production Index,106.5463,-1.7081,INDUSTRY,ISM
+545,2025-05-11,Construction Starts Index,100.891,0.5112,ECONOMIC,Census Bureau
+546,2025-05-11,Clinical Trial Spend ($B),2.3336,-0.0907,INDUSTRY,Census Bureau
+547,2025-05-11,Industrial Production Index,100.7469,1.8497,ECONOMIC,Federal Reserve
+548,2025-05-11,Manufacturing PMI,47.3092,1.2624,ECONOMIC,Census Bureau
+549,2025-05-11,Freight Cost Index,117.2479,-2.7241,ECONOMIC,ISM
+550,2025-05-11,Steel Demand Index,110.1972,-0.7147,COMMODITY,Federal Reserve
+551,2025-05-11,Semiconductor Demand Index,92.529,-0.5006,INDUSTRY,ISM
+552,2025-05-11,Chemical Production Index,98.1647,2.678,INDUSTRY,Census Bureau
+553,2025-05-18,Construction Starts Index,101.3066,-5.5136,ECONOMIC,ISM
+554,2025-05-18,Clinical Trial Spend ($B),2.4681,1.0476,INDUSTRY,Census Bureau
+555,2025-05-18,Industrial Production Index,95.7365,0.3062,ECONOMIC,Industry Association
+556,2025-05-18,Manufacturing PMI,50.3835,-1.9695,ECONOMIC,Census Bureau
+557,2025-05-18,Freight Cost Index,118.1699,-1.4478,ECONOMIC,Federal Reserve
+558,2025-05-18,Steel Demand Index,115.9517,2.6045,COMMODITY,Industry Association
+559,2025-05-18,Semiconductor Demand Index,97.1162,0.4476,INDUSTRY,Industry Association
+560,2025-05-18,Chemical Production Index,105.2727,1.3495,INDUSTRY,ISM
+561,2025-05-25,Construction Starts Index,98.9733,1.3037,ECONOMIC,Federal Reserve
+562,2025-05-25,Clinical Trial Spend ($B),2.5068,3.5933,INDUSTRY,Industry Association
+563,2025-05-25,Industrial Production Index,98.4504,1.3788,ECONOMIC,Census Bureau
+564,2025-05-25,Manufacturing PMI,50.3954,0.3434,ECONOMIC,Industry Association
+565,2025-05-25,Freight Cost Index,122.1881,-1.6662,ECONOMIC,ISM
+566,2025-05-25,Steel Demand Index,105.7182,-2.5664,COMMODITY,Census Bureau
+567,2025-05-25,Semiconductor Demand Index,94.7676,-1.1342,INDUSTRY,Federal Reserve
+568,2025-05-25,Chemical Production Index,101.6543,1.5256,INDUSTRY,Federal Reserve
+569,2025-06-01,Construction Starts Index,94.2914,-0.4992,ECONOMIC,Federal Reserve
+570,2025-06-01,Clinical Trial Spend ($B),2.4061,0.3615,INDUSTRY,Census Bureau
+571,2025-06-01,Industrial Production Index,97.1083,2.6715,ECONOMIC,ISM
+572,2025-06-01,Manufacturing PMI,49.9291,2.9549,ECONOMIC,Census Bureau
+573,2025-06-01,Freight Cost Index,126.3421,-3.6812,ECONOMIC,ISM
+574,2025-06-01,Steel Demand Index,115.763,0.8067,COMMODITY,Census Bureau
+575,2025-06-01,Semiconductor Demand Index,94.4842,0.3723,INDUSTRY,Census Bureau
+576,2025-06-01,Chemical Production Index,100.6304,-1.0323,INDUSTRY,ISM
+577,2025-06-08,Construction Starts Index,97.3236,-0.0455,ECONOMIC,Federal Reserve
+578,2025-06-08,Clinical Trial Spend ($B),2.5695,-0.7609,INDUSTRY,Federal Reserve
+579,2025-06-08,Industrial Production Index,98.4979,-0.4678,ECONOMIC,Industry Association
+580,2025-06-08,Manufacturing PMI,51.1946,-2.7325,ECONOMIC,ISM
+581,2025-06-08,Freight Cost Index,118.6299,2.9575,ECONOMIC,Federal Reserve
+582,2025-06-08,Steel Demand Index,110.8256,-1.8315,COMMODITY,Industry Association
+583,2025-06-08,Semiconductor Demand Index,93.9991,-0.2215,INDUSTRY,Industry Association
+584,2025-06-08,Chemical Production Index,100.9701,1.2106,INDUSTRY,ISM
+585,2025-06-15,Construction Starts Index,92.2008,1.3019,ECONOMIC,ISM
+586,2025-06-15,Clinical Trial Spend ($B),2.3246,0.5848,INDUSTRY,Industry Association
+587,2025-06-15,Industrial Production Index,98.3769,-0.1864,ECONOMIC,ISM
+588,2025-06-15,Manufacturing PMI,51.9601,-1.3867,ECONOMIC,Census Bureau
+589,2025-06-15,Freight Cost Index,127.177,0.6771,ECONOMIC,Industry Association
+590,2025-06-15,Steel Demand Index,118.6754,-1.384,COMMODITY,ISM
+591,2025-06-15,Semiconductor Demand Index,94.5326,-0.9141,INDUSTRY,Industry Association
+592,2025-06-15,Chemical Production Index,103.6475,-0.3569,INDUSTRY,Census Bureau
+593,2025-06-22,Construction Starts Index,101.4617,-0.0561,ECONOMIC,Census Bureau
+594,2025-06-22,Clinical Trial Spend ($B),2.8817,0.1357,INDUSTRY,Industry Association
+595,2025-06-22,Industrial Production Index,99.2137,-0.244,ECONOMIC,Federal Reserve
+596,2025-06-22,Manufacturing PMI,49.2633,0.3914,ECONOMIC,Census Bureau
+597,2025-06-22,Freight Cost Index,123.8524,-1.5045,ECONOMIC,ISM
+598,2025-06-22,Steel Demand Index,107.6937,-0.0478,COMMODITY,Industry Association
+599,2025-06-22,Semiconductor Demand Index,97.94,-0.6643,INDUSTRY,Federal Reserve
+600,2025-06-22,Chemical Production Index,100.5169,0.3719,INDUSTRY,ISM
+601,2025-06-29,Construction Starts Index,98.2577,-0.7518,ECONOMIC,Federal Reserve
+602,2025-06-29,Clinical Trial Spend ($B),2.489,-0.2558,INDUSTRY,ISM
+603,2025-06-29,Industrial Production Index,95.4879,0.0359,ECONOMIC,Industry Association
+604,2025-06-29,Manufacturing PMI,51.6671,1.1932,ECONOMIC,Census Bureau
+605,2025-06-29,Freight Cost Index,109.5534,-0.6154,ECONOMIC,Federal Reserve
+606,2025-06-29,Steel Demand Index,109.0897,-2.1028,COMMODITY,ISM
+607,2025-06-29,Semiconductor Demand Index,96.2591,1.1568,INDUSTRY,Census Bureau
+608,2025-06-29,Chemical Production Index,99.3987,-6.0456,INDUSTRY,Census Bureau
+609,2025-07-06,Construction Starts Index,103.5156,-2.8291,ECONOMIC,Census Bureau
+610,2025-07-06,Clinical Trial Spend ($B),2.4466,-0.7812,INDUSTRY,Census Bureau
+611,2025-07-06,Industrial Production Index,98.9883,-0.3621,ECONOMIC,Industry Association
+612,2025-07-06,Manufacturing PMI,47.8515,2.9397,ECONOMIC,ISM
+613,2025-07-06,Freight Cost Index,118.8955,0.4049,ECONOMIC,Census Bureau
+614,2025-07-06,Steel Demand Index,111.1134,-0.1371,COMMODITY,Federal Reserve
+615,2025-07-06,Semiconductor Demand Index,99.5697,-3.0426,INDUSTRY,Census Bureau
+616,2025-07-06,Chemical Production Index,98.6284,0.3875,INDUSTRY,Industry Association
+617,2025-07-13,Construction Starts Index,105.5768,2.3255,ECONOMIC,Census Bureau
+618,2025-07-13,Clinical Trial Spend ($B),2.5301,0.2298,INDUSTRY,Federal Reserve
+619,2025-07-13,Industrial Production Index,98.1642,2.238,ECONOMIC,Industry Association
+620,2025-07-13,Manufacturing PMI,49.0545,4.8147,ECONOMIC,Industry Association
+621,2025-07-13,Freight Cost Index,107.7324,0.9895,ECONOMIC,Census Bureau
+622,2025-07-13,Steel Demand Index,109.0427,-2.7487,COMMODITY,Federal Reserve
+623,2025-07-13,Semiconductor Demand Index,88.7826,2.7915,INDUSTRY,ISM
+624,2025-07-13,Chemical Production Index,98.6174,2.0467,INDUSTRY,Federal Reserve
+625,2025-07-20,Construction Starts Index,98.5434,1.8457,ECONOMIC,Federal Reserve
+626,2025-07-20,Clinical Trial Spend ($B),2.5474,2.5122,INDUSTRY,Census Bureau
+627,2025-07-20,Industrial Production Index,100.1265,-0.7099,ECONOMIC,ISM
+628,2025-07-20,Manufacturing PMI,50.6768,1.2292,ECONOMIC,Industry Association
+629,2025-07-20,Freight Cost Index,115.6819,-0.73,ECONOMIC,Census Bureau
+630,2025-07-20,Steel Demand Index,112.0123,-3.5872,COMMODITY,Industry Association
+631,2025-07-20,Semiconductor Demand Index,87.687,0.385,INDUSTRY,Census Bureau
+632,2025-07-20,Chemical Production Index,102.0471,1.2029,INDUSTRY,Industry Association
+633,2025-07-27,Construction Starts Index,103.7012,0.0733,ECONOMIC,Industry Association
+634,2025-07-27,Clinical Trial Spend ($B),2.5507,-0.77,INDUSTRY,Industry Association
+635,2025-07-27,Industrial Production Index,97.7968,0.1231,ECONOMIC,Industry Association
+636,2025-07-27,Manufacturing PMI,51.9228,3.4026,ECONOMIC,Federal Reserve
+637,2025-07-27,Freight Cost Index,113.3949,0.581,ECONOMIC,Federal Reserve
+638,2025-07-27,Steel Demand Index,102.1847,-0.6374,COMMODITY,Industry Association
+639,2025-07-27,Semiconductor Demand Index,95.7133,3.3482,INDUSTRY,Federal Reserve
+640,2025-07-27,Chemical Production Index,100.0965,-1.8558,INDUSTRY,ISM
+641,2025-08-03,Construction Starts Index,102.0252,-3.181,ECONOMIC,Industry Association
+642,2025-08-03,Clinical Trial Spend ($B),2.7339,2.0754,INDUSTRY,ISM
+643,2025-08-03,Industrial Production Index,97.5073,3.3803,ECONOMIC,Census Bureau
+644,2025-08-03,Manufacturing PMI,50.913,1.8366,ECONOMIC,Census Bureau
+645,2025-08-03,Freight Cost Index,122.7471,1.6809,ECONOMIC,Census Bureau
+646,2025-08-03,Steel Demand Index,111.0854,3.1703,COMMODITY,Federal Reserve
+647,2025-08-03,Semiconductor Demand Index,91.6725,-3.727,INDUSTRY,Industry Association
+648,2025-08-03,Chemical Production Index,101.8442,-1.8896,INDUSTRY,Federal Reserve
+649,2025-08-10,Construction Starts Index,94.6156,-0.1684,ECONOMIC,ISM
+650,2025-08-10,Clinical Trial Spend ($B),2.6599,3.037,INDUSTRY,Industry Association
+651,2025-08-10,Industrial Production Index,97.2053,0.1268,ECONOMIC,ISM
+652,2025-08-10,Manufacturing PMI,47.693,1.6358,ECONOMIC,Industry Association
+653,2025-08-10,Freight Cost Index,124.8061,0.0107,ECONOMIC,Census Bureau
+654,2025-08-10,Steel Demand Index,111.9275,-1.6578,COMMODITY,Industry Association
+655,2025-08-10,Semiconductor Demand Index,95.2833,0.4205,INDUSTRY,ISM
+656,2025-08-10,Chemical Production Index,104.6525,-2.0905,INDUSTRY,Industry Association
+657,2025-08-17,Construction Starts Index,100.9172,-1.556,ECONOMIC,ISM
+658,2025-08-17,Clinical Trial Spend ($B),2.3827,2.958,INDUSTRY,Industry Association
+659,2025-08-17,Industrial Production Index,96.2813,1.7751,ECONOMIC,Federal Reserve
+660,2025-08-17,Manufacturing PMI,47.0162,1.4898,ECONOMIC,Industry Association
+661,2025-08-17,Freight Cost Index,123.8138,0.7063,ECONOMIC,ISM
+662,2025-08-17,Steel Demand Index,103.6538,0.1459,COMMODITY,Census Bureau
+663,2025-08-17,Semiconductor Demand Index,88.0503,0.5514,INDUSTRY,Federal Reserve
+664,2025-08-17,Chemical Production Index,102.7185,0.9463,INDUSTRY,Industry Association
+665,2025-08-24,Construction Starts Index,94.3718,-0.49,ECONOMIC,Census Bureau
+666,2025-08-24,Clinical Trial Spend ($B),2.5955,-2.0362,INDUSTRY,ISM
+667,2025-08-24,Industrial Production Index,97.369,0.6862,ECONOMIC,Industry Association
+668,2025-08-24,Manufacturing PMI,50.301,4.7628,ECONOMIC,Federal Reserve
+669,2025-08-24,Freight Cost Index,118.905,1.4777,ECONOMIC,Federal Reserve
+670,2025-08-24,Steel Demand Index,106.3417,2.1498,COMMODITY,ISM
+671,2025-08-24,Semiconductor Demand Index,101.5164,-2.176,INDUSTRY,Census Bureau
+672,2025-08-24,Chemical Production Index,103.0452,-2.025,INDUSTRY,Federal Reserve
+673,2025-08-31,Construction Starts Index,101.9651,1.6824,ECONOMIC,ISM
+674,2025-08-31,Clinical Trial Spend ($B),2.5976,-0.0076,INDUSTRY,Industry Association
+675,2025-08-31,Industrial Production Index,100.403,-3.6279,ECONOMIC,Federal Reserve
+676,2025-08-31,Manufacturing PMI,51.5632,1.9301,ECONOMIC,Federal Reserve
+677,2025-08-31,Freight Cost Index,122.3028,0.4934,ECONOMIC,Federal Reserve
+678,2025-08-31,Steel Demand Index,113.8017,2.3122,COMMODITY,Census Bureau
+679,2025-08-31,Semiconductor Demand Index,95.0573,-1.9301,INDUSTRY,ISM
+680,2025-08-31,Chemical Production Index,101.2735,0.9002,INDUSTRY,Industry Association
+681,2025-09-07,Construction Starts Index,102.5563,-1.5218,ECONOMIC,Industry Association
+682,2025-09-07,Clinical Trial Spend ($B),2.3677,1.5727,INDUSTRY,ISM
+683,2025-09-07,Industrial Production Index,99.8923,2.6405,ECONOMIC,Census Bureau
+684,2025-09-07,Manufacturing PMI,52.6421,-1.447,ECONOMIC,Industry Association
+685,2025-09-07,Freight Cost Index,121.501,2.6066,ECONOMIC,Federal Reserve
+686,2025-09-07,Steel Demand Index,113.5236,-1.8465,COMMODITY,Industry Association
+687,2025-09-07,Semiconductor Demand Index,101.7279,-1.0002,INDUSTRY,Federal Reserve
+688,2025-09-07,Chemical Production Index,100.6395,-4.3963,INDUSTRY,Census Bureau
+689,2025-09-14,Construction Starts Index,96.1576,0.2622,ECONOMIC,Industry Association
+690,2025-09-14,Clinical Trial Spend ($B),2.7106,1.9525,INDUSTRY,Federal Reserve
+691,2025-09-14,Industrial Production Index,97.885,-0.3526,ECONOMIC,Industry Association
+692,2025-09-14,Manufacturing PMI,48.4279,1.4209,ECONOMIC,Census Bureau
+693,2025-09-14,Freight Cost Index,111.8157,0.81,ECONOMIC,Census Bureau
+694,2025-09-14,Steel Demand Index,114.4913,0.6655,COMMODITY,Industry Association
+695,2025-09-14,Semiconductor Demand Index,96.6228,1.2965,INDUSTRY,Census Bureau
+696,2025-09-14,Chemical Production Index,100.7498,-2.5132,INDUSTRY,Industry Association
+697,2025-09-21,Construction Starts Index,101.474,1.1014,ECONOMIC,Industry Association
+698,2025-09-21,Clinical Trial Spend ($B),2.4342,-2.3874,INDUSTRY,ISM
+699,2025-09-21,Industrial Production Index,98.6934,-3.1166,ECONOMIC,Federal Reserve
+700,2025-09-21,Manufacturing PMI,50.0844,3.2948,ECONOMIC,Industry Association
+701,2025-09-21,Freight Cost Index,116.9491,1.6869,ECONOMIC,Industry Association
+702,2025-09-21,Steel Demand Index,107.8809,1.5493,COMMODITY,ISM
+703,2025-09-21,Semiconductor Demand Index,91.2293,1.7212,INDUSTRY,Census Bureau
+704,2025-09-21,Chemical Production Index,101.7048,5.021,INDUSTRY,ISM
+705,2025-09-28,Construction Starts Index,101.8714,4.4355,ECONOMIC,Census Bureau
+706,2025-09-28,Clinical Trial Spend ($B),2.5052,-1.4147,INDUSTRY,Census Bureau
+707,2025-09-28,Industrial Production Index,97.7713,-2.7484,ECONOMIC,ISM
+708,2025-09-28,Manufacturing PMI,52.147,-1.2034,ECONOMIC,ISM
+709,2025-09-28,Freight Cost Index,117.9914,1.8428,ECONOMIC,Industry Association
+710,2025-09-28,Steel Demand Index,108.9064,1.7558,COMMODITY,Federal Reserve
+711,2025-09-28,Semiconductor Demand Index,103.3597,-0.6291,INDUSTRY,Federal Reserve
+712,2025-09-28,Chemical Production Index,100.0997,1.9971,INDUSTRY,Census Bureau
+713,2025-10-05,Construction Starts Index,98.7385,-2.6886,ECONOMIC,Federal Reserve
+714,2025-10-05,Clinical Trial Spend ($B),2.5764,0.4699,INDUSTRY,Federal Reserve
+715,2025-10-05,Industrial Production Index,97.6293,0.7979,ECONOMIC,Federal Reserve
+716,2025-10-05,Manufacturing PMI,49.939,-0.1577,ECONOMIC,Federal Reserve
+717,2025-10-05,Freight Cost Index,117.7459,-1.9461,ECONOMIC,Federal Reserve
+718,2025-10-05,Steel Demand Index,111.2008,-0.2803,COMMODITY,Industry Association
+719,2025-10-05,Semiconductor Demand Index,87.9397,-0.2711,INDUSTRY,Industry Association
+720,2025-10-05,Chemical Production Index,101.9815,0.3546,INDUSTRY,Federal Reserve
+721,2025-10-12,Construction Starts Index,102.0856,-0.616,ECONOMIC,Census Bureau
+722,2025-10-12,Clinical Trial Spend ($B),2.4208,-0.7461,INDUSTRY,Federal Reserve
+723,2025-10-12,Industrial Production Index,97.6499,1.6716,ECONOMIC,Census Bureau
+724,2025-10-12,Manufacturing PMI,50.3282,-2.5891,ECONOMIC,Census Bureau
+725,2025-10-12,Freight Cost Index,118.4571,-1.1043,ECONOMIC,Census Bureau
+726,2025-10-12,Steel Demand Index,115.2987,-1.0554,COMMODITY,Industry Association
+727,2025-10-12,Semiconductor Demand Index,104.1033,2.2236,INDUSTRY,Industry Association
+728,2025-10-12,Chemical Production Index,102.8596,3.3789,INDUSTRY,Industry Association
+729,2025-10-19,Construction Starts Index,99.8559,0.6121,ECONOMIC,Federal Reserve
+730,2025-10-19,Clinical Trial Spend ($B),2.4104,-2.5122,INDUSTRY,Federal Reserve
+731,2025-10-19,Industrial Production Index,98.056,0.8496,ECONOMIC,ISM
+732,2025-10-19,Manufacturing PMI,49.9834,1.9135,ECONOMIC,Census Bureau
+733,2025-10-19,Freight Cost Index,119.6478,0.1337,ECONOMIC,Industry Association
+734,2025-10-19,Steel Demand Index,113.2257,-1.5887,COMMODITY,Census Bureau
+735,2025-10-19,Semiconductor Demand Index,92.3958,0.5783,INDUSTRY,Industry Association
+736,2025-10-19,Chemical Production Index,101.5633,-2.8257,INDUSTRY,Census Bureau
+737,2025-10-26,Construction Starts Index,102.9491,-2.1541,ECONOMIC,ISM
+738,2025-10-26,Clinical Trial Spend ($B),2.6527,2.4262,INDUSTRY,Census Bureau
+739,2025-10-26,Industrial Production Index,95.1455,1.7109,ECONOMIC,Census Bureau
+740,2025-10-26,Manufacturing PMI,49.312,0.2214,ECONOMIC,Industry Association
+741,2025-10-26,Freight Cost Index,119.8572,0.2371,ECONOMIC,Federal Reserve
+742,2025-10-26,Steel Demand Index,106.9601,1.6849,COMMODITY,Census Bureau
+743,2025-10-26,Semiconductor Demand Index,93.1713,-1.2997,INDUSTRY,Census Bureau
+744,2025-10-26,Chemical Production Index,99.9226,-0.3017,INDUSTRY,Federal Reserve
+745,2025-11-02,Construction Starts Index,100.7517,1.2065,ECONOMIC,ISM
+746,2025-11-02,Clinical Trial Spend ($B),2.4454,-1.1216,INDUSTRY,Census Bureau
+747,2025-11-02,Industrial Production Index,96.6703,2.6778,ECONOMIC,ISM
+748,2025-11-02,Manufacturing PMI,53.0528,-0.487,ECONOMIC,Federal Reserve
+749,2025-11-02,Freight Cost Index,121.9454,4.1256,ECONOMIC,Census Bureau
+750,2025-11-02,Steel Demand Index,107.0618,-1.4303,COMMODITY,Federal Reserve
+751,2025-11-02,Semiconductor Demand Index,89.1801,-0.114,INDUSTRY,ISM
+752,2025-11-02,Chemical Production Index,106.0459,-4.1362,INDUSTRY,ISM
+753,2025-11-09,Construction Starts Index,103.9819,-1.2121,ECONOMIC,Census Bureau
+754,2025-11-09,Clinical Trial Spend ($B),2.5646,3.984,INDUSTRY,ISM
+755,2025-11-09,Industrial Production Index,97.8158,1.7997,ECONOMIC,Industry Association
+756,2025-11-09,Manufacturing PMI,49.0844,-0.9405,ECONOMIC,Census Bureau
+757,2025-11-09,Freight Cost Index,113.9001,-3.7876,ECONOMIC,Federal Reserve
+758,2025-11-09,Steel Demand Index,106.2513,1.6629,COMMODITY,Industry Association
+759,2025-11-09,Semiconductor Demand Index,102.5359,-4.4027,INDUSTRY,Census Bureau
+760,2025-11-09,Chemical Production Index,103.3196,-2.6275,INDUSTRY,ISM
+761,2025-11-16,Construction Starts Index,92.3901,-2.0751,ECONOMIC,Census Bureau
+762,2025-11-16,Clinical Trial Spend ($B),2.5103,-0.5443,INDUSTRY,Industry Association
+763,2025-11-16,Industrial Production Index,96.1841,2.7667,ECONOMIC,Industry Association
+764,2025-11-16,Manufacturing PMI,48.7943,2.7242,ECONOMIC,ISM
+765,2025-11-16,Freight Cost Index,117.9332,-1.2561,ECONOMIC,Census Bureau
+766,2025-11-16,Steel Demand Index,116.6332,0.2307,COMMODITY,Industry Association
+767,2025-11-16,Semiconductor Demand Index,93.6931,0.7774,INDUSTRY,ISM
+768,2025-11-16,Chemical Production Index,101.4175,-2.0786,INDUSTRY,ISM
+769,2025-11-23,Construction Starts Index,101.3638,-3.2491,ECONOMIC,Census Bureau
+770,2025-11-23,Clinical Trial Spend ($B),2.5634,-2.3175,INDUSTRY,Federal Reserve
+771,2025-11-23,Industrial Production Index,97.5673,0.703,ECONOMIC,ISM
+772,2025-11-23,Manufacturing PMI,49.1749,-0.7537,ECONOMIC,Federal Reserve
+773,2025-11-23,Freight Cost Index,121.811,1.1728,ECONOMIC,Federal Reserve
+774,2025-11-23,Steel Demand Index,107.2417,1.8526,COMMODITY,Industry Association
+775,2025-11-23,Semiconductor Demand Index,99.1448,-0.0306,INDUSTRY,Industry Association
+776,2025-11-23,Chemical Production Index,103.1574,0.6965,INDUSTRY,Industry Association
+777,2025-11-30,Construction Starts Index,97.923,1.5323,ECONOMIC,Federal Reserve
+778,2025-11-30,Clinical Trial Spend ($B),2.4899,2.7699,INDUSTRY,Industry Association
+779,2025-11-30,Industrial Production Index,97.0504,-2.1081,ECONOMIC,Census Bureau
+780,2025-11-30,Manufacturing PMI,51.502,2.2588,ECONOMIC,Census Bureau
+781,2025-11-30,Freight Cost Index,118.5819,1.2369,ECONOMIC,Federal Reserve
+782,2025-11-30,Steel Demand Index,106.9993,1.0978,COMMODITY,Federal Reserve
+783,2025-11-30,Semiconductor Demand Index,100.1468,-0.9108,INDUSTRY,ISM
+784,2025-11-30,Chemical Production Index,101.506,-0.812,INDUSTRY,ISM
+785,2025-12-07,Construction Starts Index,95.3742,-0.487,ECONOMIC,Federal Reserve
+786,2025-12-07,Clinical Trial Spend ($B),2.5987,1.0483,INDUSTRY,ISM
+787,2025-12-07,Industrial Production Index,96.9857,-1.4069,ECONOMIC,Census Bureau
+788,2025-12-07,Manufacturing PMI,51.7366,0.9766,ECONOMIC,ISM
+789,2025-12-07,Freight Cost Index,125.1552,-2.3987,ECONOMIC,Federal Reserve
+790,2025-12-07,Steel Demand Index,108.8178,-2.4472,COMMODITY,Industry Association
+791,2025-12-07,Semiconductor Demand Index,101.3208,0.5811,INDUSTRY,ISM
+792,2025-12-07,Chemical Production Index,101.6605,-3.8955,INDUSTRY,Census Bureau
+793,2025-12-14,Construction Starts Index,99.5954,-0.0416,ECONOMIC,Federal Reserve
+794,2025-12-14,Clinical Trial Spend ($B),2.6098,2.1835,INDUSTRY,Industry Association
+795,2025-12-14,Industrial Production Index,98.2449,1.8927,ECONOMIC,Census Bureau
+796,2025-12-14,Manufacturing PMI,49.6929,-0.7877,ECONOMIC,Federal Reserve
+797,2025-12-14,Freight Cost Index,116.1592,1.6238,ECONOMIC,Census Bureau
+798,2025-12-14,Steel Demand Index,113.861,-1.0834,COMMODITY,Federal Reserve
+799,2025-12-14,Semiconductor Demand Index,85.0977,1.0384,INDUSTRY,Federal Reserve
+800,2025-12-14,Chemical Production Index,101.9766,-0.0112,INDUSTRY,ISM
+801,2025-12-21,Construction Starts Index,100.7874,2.28,ECONOMIC,Industry Association
+802,2025-12-21,Clinical Trial Spend ($B),2.5588,1.9527,INDUSTRY,Industry Association
+803,2025-12-21,Industrial Production Index,97.7388,-0.6719,ECONOMIC,Census Bureau
+804,2025-12-21,Manufacturing PMI,51.5791,-0.2415,ECONOMIC,Federal Reserve
+805,2025-12-21,Freight Cost Index,114.8673,3.0662,ECONOMIC,Federal Reserve
+806,2025-12-21,Steel Demand Index,108.101,2.7745,COMMODITY,Industry Association
+807,2025-12-21,Semiconductor Demand Index,100.7244,2.3503,INDUSTRY,Census Bureau
+808,2025-12-21,Chemical Production Index,99.1005,-0.5292,INDUSTRY,Federal Reserve
+809,2025-12-28,Construction Starts Index,102.141,0.2405,ECONOMIC,Census Bureau
+810,2025-12-28,Clinical Trial Spend ($B),2.5102,-2.9148,INDUSTRY,Census Bureau
+811,2025-12-28,Industrial Production Index,99.5844,-0.7122,ECONOMIC,Census Bureau
+812,2025-12-28,Manufacturing PMI,46.7184,0.0213,ECONOMIC,Federal Reserve
+813,2025-12-28,Freight Cost Index,119.0085,0.6598,ECONOMIC,Census Bureau
+814,2025-12-28,Steel Demand Index,114.2558,-0.5574,COMMODITY,Census Bureau
+815,2025-12-28,Semiconductor Demand Index,92.2176,-0.8859,INDUSTRY,Census Bureau
+816,2025-12-28,Chemical Production Index,102.5091,-3.5336,INDUSTRY,Federal Reserve
+817,2026-01-04,Construction Starts Index,99.8584,0.8547,ECONOMIC,ISM
+818,2026-01-04,Clinical Trial Spend ($B),2.2194,2.6968,INDUSTRY,Census Bureau
+819,2026-01-04,Industrial Production Index,98.3758,-1.8927,ECONOMIC,Federal Reserve
+820,2026-01-04,Manufacturing PMI,49.7148,-1.3617,ECONOMIC,Industry Association
+821,2026-01-04,Freight Cost Index,120.0132,-1.357,ECONOMIC,ISM
+822,2026-01-04,Steel Demand Index,104.5088,-1.5349,COMMODITY,Census Bureau
+823,2026-01-04,Semiconductor Demand Index,98.8741,-1.2798,INDUSTRY,ISM
+824,2026-01-04,Chemical Production Index,104.9255,3.4463,INDUSTRY,Federal Reserve
+825,2026-01-11,Construction Starts Index,96.523,-1.0494,ECONOMIC,Industry Association
+826,2026-01-11,Clinical Trial Spend ($B),2.5136,-1.4586,INDUSTRY,Industry Association
+827,2026-01-11,Industrial Production Index,97.6166,0.919,ECONOMIC,Census Bureau
+828,2026-01-11,Manufacturing PMI,50.1909,2.6159,ECONOMIC,ISM
+829,2026-01-11,Freight Cost Index,120.5398,-0.9456,ECONOMIC,Industry Association
+830,2026-01-11,Steel Demand Index,107.4913,-0.1727,COMMODITY,Census Bureau
+831,2026-01-11,Semiconductor Demand Index,88.6595,-1.7246,INDUSTRY,Federal Reserve
+832,2026-01-11,Chemical Production Index,102.3866,-2.5148,INDUSTRY,Federal Reserve

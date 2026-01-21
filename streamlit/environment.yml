@@ -1,0 +1,13 @@
+# Snowflake Streamlit Environment Configuration
+# Compatible with Snowflake's Anaconda channel
+
+name: procurement_intelligence
+channels:
+  - snowflake
+dependencies:
+  - streamlit
+  - snowflake-snowpark-python
+  - pandas
+  - altair
+  - pydeck
+  - plotly

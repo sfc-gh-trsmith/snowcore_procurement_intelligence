@@ -1,0 +1,601 @@
+# =============================================================================
+# Snowcore Industries Intelligent Sourcing Hub
+# Cortex Analyst Semantic Model
+# =============================================================================
+# This semantic model enables natural language queries over procurement data.
+# Users can ask questions like "What is our total spend with high-risk suppliers?"
+# and Cortex Analyst will generate the appropriate SQL.
+# =============================================================================
+
+name: procurement_intelligence
+description: >
+  Semantic model for procurement analytics at Snowcore Industries.
+  Covers spend analysis, supplier risk, should-cost modeling, ESG metrics,
+  and demand forecasting across 50+ legacy ERP systems.
+
+# Database and schema context
+database: SNOWCORE_PROCUREMENT
+schema: PROCUREMENT_MART
+
+# =============================================================================
+# Tables / Views
+# =============================================================================
+tables:
+  # --------------------------------------------------------------------------
+  # Spend Summary - Core procurement transactions
+  # --------------------------------------------------------------------------
+  - name: V_SPEND_SUMMARY
+    description: >
+      Consolidated purchase order spend data across all 50+ ERP source systems.
+      Includes supplier information, product details, and order values.
+    base_table:
+      database: SNOWCORE_PROCUREMENT
+      schema: PROCUREMENT_MART
+      table: V_SPEND_SUMMARY
+    
+    dimensions:
+      - name: purchase_order_number
+        expr: PURCHASE_ORDER_NUMBER
+        description: Unique purchase order identifier
+        data_type: TEXT
+        
+      - name: purchase_order_date
+        expr: PURCHASE_ORDER_DATE
+        description: Date the purchase order was created
+        data_type: DATE
+        
+      - name: erp_source_system
+        expr: ERP_SOURCE_SYSTEM
+        description: Source ERP system (e.g., SAP_US_EAST, ORACLE_EMEA_HQ, BIOFLOW_LAB_US)
+        data_type: TEXT
+        sample_values:
+          - SAP_US_EAST
+          - ORACLE_EMEA_HQ
+          - BIOFLOW_LAB_US
+          - JDE_LEGACY_1
+        
+      - name: supplier_code
+        expr: SUPPLIER_CODE
+        description: Unique supplier identifier
+        data_type: TEXT
+        
+      - name: supplier_name
+        expr: SUPPLIER_NAME
+        description: Supplier company name
+        data_type: TEXT
+        
+      - name: supplier_type
+        expr: SUPPLIER_TYPE
+        description: Supplier classification (STRATEGIC, PREFERRED, APPROVED, STANDARD)
+        data_type: TEXT
+        sample_values:
+          - STRATEGIC
+          - PREFERRED
+          - APPROVED
+          - STANDARD
+        
+      - name: supplier_country
+        expr: SUPPLIER_COUNTRY
+        description: Country where supplier is located
+        data_type: TEXT
+        
+      - name: region
+        expr: REGION
+        description: Geographic region (AMER, EMEA, APAC)
+        data_type: TEXT
+        sample_values:
+          - AMER
+          - EMEA
+          - APAC
+        
+      - name: product_code
+        expr: PRODUCT_CODE
+        description: Product/material SKU
+        data_type: TEXT
+        
+      - name: product_name
+        expr: PRODUCT_NAME
+        description: Product description
+        data_type: TEXT
+        
+      - name: material_category
+        expr: MATERIAL_CATEGORY
+        description: Product category (Thermal Systems, Bio-Robotics, Alloys & Metals, etc.)
+        data_type: TEXT
+        sample_values:
+          - Thermal Systems
+          - Bio-Robotics
+          - Alloys & Metals
+          - Reagents & Chemicals
+          - Precision Components
+        
+      - name: currency_code
+        expr: CURRENCY_CODE
+        description: Transaction currency
+        data_type: TEXT
+        
+      - name: buying_organization
+        expr: BUYING_ORGANIZATION
+        description: Internal organization placing the order
+        data_type: TEXT
+        
+      - name: ship_to_site
+        expr: SHIP_TO_SITE
+        description: Destination site for delivery
+        data_type: TEXT
+        
+      - name: line_status
+        expr: LINE_STATUS
+        description: Order line status (OPEN, RECEIVED, CLOSED, CANCELLED)
+        data_type: TEXT
+
+    measures:
+      - name: total_spend_amount
+        expr: SUM(SPEND_AMOUNT)
+        description: Total spend amount in transaction currency
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: order_count
+        expr: COUNT(DISTINCT PURCHASE_ORDER_NUMBER)
+        description: Number of distinct purchase orders
+        data_type: NUMBER
+        default_aggregation: count_distinct
+        
+      - name: line_count
+        expr: COUNT(*)
+        description: Number of purchase order lines
+        data_type: NUMBER
+        default_aggregation: count
+        
+      - name: average_order_value
+        expr: AVG(SPEND_AMOUNT)
+        description: Average spend per order line
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: total_quantity
+        expr: SUM(ORDERED_QUANTITY)
+        description: Total quantity ordered
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: average_unit_price
+        expr: AVG(UNIT_PRICE)
+        description: Average unit price
+        data_type: NUMBER
+        default_aggregation: avg
+
+  # --------------------------------------------------------------------------
+  # Supplier Risk - Financial health and risk scores
+  # --------------------------------------------------------------------------
+  - name: V_SUPPLIER_RISK
+    description: >
+      Supplier risk assessment data including financial health scores,
+      geopolitical risk, ESG ratings, and calculated revenue at risk.
+    base_table:
+      database: SNOWCORE_PROCUREMENT
+      schema: PROCUREMENT_MART
+      table: V_SUPPLIER_RISK
+    
+    dimensions:
+      - name: supplier_code
+        expr: SUPPLIER_CODE
+        description: Unique supplier identifier
+        data_type: TEXT
+        
+      - name: supplier_name
+        expr: SUPPLIER_NAME
+        description: Supplier company name
+        data_type: TEXT
+        
+      - name: supplier_type
+        expr: SUPPLIER_TYPE
+        description: Supplier classification
+        data_type: TEXT
+        
+      - name: supplier_country
+        expr: SUPPLIER_COUNTRY
+        description: Country where supplier is located
+        data_type: TEXT
+        
+      - name: region
+        expr: REGION
+        description: Geographic region (AMER, EMEA, APAC)
+        data_type: TEXT
+        sample_values:
+          - AMER
+          - EMEA
+          - APAC
+        
+      - name: credit_rating
+        expr: CREDIT_RATING
+        description: Credit rating (AAA, AA, A, BBB, BB, B, CCC)
+        data_type: TEXT
+        
+      - name: geopolitical_risk_level
+        expr: GEOPOLITICAL_RISK_LEVEL
+        description: Geopolitical risk level (LOW, MEDIUM, HIGH)
+        data_type: TEXT
+        sample_values:
+          - LOW
+          - MEDIUM
+          - HIGH
+        
+      - name: overall_risk_rating
+        expr: OVERALL_RISK_RATING
+        description: Overall risk classification (LOW, MEDIUM, HIGH)
+        data_type: TEXT
+        sample_values:
+          - LOW
+          - MEDIUM
+          - HIGH
+        
+      - name: risk_level
+        expr: RISK_LEVEL
+        description: Risk level based on financial health (CRITICAL, HIGH, MEDIUM, LOW)
+        data_type: TEXT
+        sample_values:
+          - CRITICAL
+          - HIGH
+          - MEDIUM
+          - LOW
+        
+      - name: certification_status
+        expr: CERTIFICATION_STATUS
+        description: Supplier certifications (ISO9001, ISO14001, ISO13485)
+        data_type: TEXT
+
+    measures:
+      - name: financial_health_score
+        expr: AVG(FINANCIAL_HEALTH_SCORE)
+        description: Financial health score (0-100, higher is better)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: esg_score
+        expr: AVG(ESG_SCORE)
+        description: Environmental, Social, Governance score (0-100)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: environmental_score
+        expr: AVG(ENVIRONMENTAL_SCORE)
+        description: Environmental component of ESG score
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: social_score
+        expr: AVG(SOCIAL_SCORE)
+        description: Social component of ESG score
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: governance_score
+        expr: AVG(GOVERNANCE_SCORE)
+        description: Governance component of ESG score
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: cyber_risk_score
+        expr: AVG(CYBER_RISK_SCORE)
+        description: Cyber security risk score (0-100)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: total_spend
+        expr: SUM(TOTAL_SPEND)
+        description: Total spend with supplier
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: revenue_at_risk
+        expr: SUM(REVENUE_AT_RISK)
+        description: Total spend with suppliers having financial health < 50
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: supplier_count
+        expr: COUNT(DISTINCT SUPPLIER_CODE)
+        description: Number of suppliers
+        data_type: NUMBER
+        default_aggregation: count_distinct
+        
+      - name: high_risk_supplier_count
+        expr: COUNT(DISTINCT CASE WHEN FINANCIAL_HEALTH_SCORE < 50 THEN SUPPLIER_CODE END)
+        description: Number of suppliers with financial health score below 50
+        data_type: NUMBER
+        default_aggregation: count_distinct
+
+  # --------------------------------------------------------------------------
+  # Should-Cost Analysis - Contract vs Market Price
+  # --------------------------------------------------------------------------
+  - name: V_SHOULD_COST_ANALYSIS
+    description: >
+      Compares contracted prices against market commodity indices
+      to identify overpayments and savings opportunities.
+    base_table:
+      database: SNOWCORE_PROCUREMENT
+      schema: PROCUREMENT_MART
+      table: V_SHOULD_COST_ANALYSIS
+    
+    dimensions:
+      - name: purchase_order_number
+        expr: PURCHASE_ORDER_NUMBER
+        description: Purchase order identifier
+        data_type: TEXT
+        
+      - name: purchase_order_date
+        expr: PURCHASE_ORDER_DATE
+        description: Order date
+        data_type: DATE
+        
+      - name: supplier_name
+        expr: SUPPLIER_NAME
+        description: Supplier name
+        data_type: TEXT
+        
+      - name: product_code
+        expr: PRODUCT_CODE
+        description: Product SKU
+        data_type: TEXT
+        
+      - name: product_name
+        expr: PRODUCT_NAME
+        description: Product description
+        data_type: TEXT
+        
+      - name: material_category
+        expr: MATERIAL_CATEGORY
+        description: Product category
+        data_type: TEXT
+        
+      - name: commodity_type
+        expr: COMMODITY_TYPE
+        description: Matched commodity index type
+        data_type: TEXT
+        
+      - name: should_cost_recommendation
+        expr: SHOULD_COST_RECOMMENDATION
+        description: Action recommendation (RENEGOTIATE, REVIEW, MARKET_RATE, FAVORABLE)
+        data_type: TEXT
+        sample_values:
+          - RENEGOTIATE
+          - REVIEW
+          - MARKET_RATE
+          - FAVORABLE
+
+    measures:
+      - name: contract_unit_price
+        expr: AVG(CONTRACT_UNIT_PRICE)
+        description: Average contracted unit price
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: market_index_price
+        expr: AVG(MARKET_INDEX_PRICE)
+        description: Average market index price
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: price_variance
+        expr: AVG(PRICE_VARIANCE)
+        description: Average price variance (Contract - Market)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: price_variance_pct
+        expr: AVG(PRICE_VARIANCE_PCT)
+        description: Average price variance percentage
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: total_potential_savings
+        expr: SUM(POTENTIAL_SAVINGS)
+        description: Total potential savings from price optimization
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: contract_total
+        expr: SUM(CONTRACT_TOTAL)
+        description: Total contracted spend
+        data_type: NUMBER
+        default_aggregation: sum
+
+  # --------------------------------------------------------------------------
+  # ESG Summary - Sustainability metrics
+  # --------------------------------------------------------------------------
+  - name: V_ESG_SUMMARY
+    description: >
+      Environmental, Social, and Governance metrics for supplier sustainability
+      tracking and carbon footprint analysis.
+    base_table:
+      database: SNOWCORE_PROCUREMENT
+      schema: PROCUREMENT_MART
+      table: V_ESG_SUMMARY
+    
+    dimensions:
+      - name: supplier_code
+        expr: SUPPLIER_CODE
+        description: Supplier identifier
+        data_type: TEXT
+        
+      - name: supplier_name
+        expr: SUPPLIER_NAME
+        description: Supplier name
+        data_type: TEXT
+        
+      - name: supplier_country
+        expr: SUPPLIER_COUNTRY
+        description: Supplier country
+        data_type: TEXT
+        
+      - name: region
+        expr: REGION
+        description: Geographic region
+        data_type: TEXT
+        
+      - name: esg_risk_level
+        expr: ESG_RISK_LEVEL
+        description: ESG risk classification (HIGH_RISK, MEDIUM_RISK, LOW_RISK, LEADER)
+        data_type: TEXT
+        sample_values:
+          - HIGH_RISK
+          - MEDIUM_RISK
+          - LOW_RISK
+          - LEADER
+
+    measures:
+      - name: esg_score
+        expr: AVG(ESG_SCORE)
+        description: Average ESG score
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: environmental_score
+        expr: AVG(ENVIRONMENTAL_SCORE)
+        description: Average environmental score
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: carbon_footprint_mt
+        expr: SUM(SUPPLIER_TOTAL_EMISSIONS_MT)
+        description: Total carbon footprint in metric tons (Scope 3)
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: spend_weighted_esg
+        expr: SUM(SPEND_WEIGHTED_ESG) / NULLIF(SUM(TOTAL_SPEND), 0)
+        description: Spend-weighted average ESG score
+        data_type: NUMBER
+        default_aggregation: avg
+
+  # --------------------------------------------------------------------------
+  # Executive KPIs - High-level metrics
+  # --------------------------------------------------------------------------
+  - name: V_EXECUTIVE_KPIS
+    description: >
+      High-level executive KPIs for the procurement dashboard including
+      total spend, risk exposure, supplier counts, and ESG metrics.
+    base_table:
+      database: SNOWCORE_PROCUREMENT
+      schema: PROCUREMENT_MART
+      table: V_EXECUTIVE_KPIS
+    
+    measures:
+      - name: total_spend
+        expr: TOTAL_SPEND
+        description: Total procurement spend across all suppliers and ERPs
+        data_type: NUMBER
+        
+      - name: total_suppliers
+        expr: TOTAL_SUPPLIERS
+        description: Total number of active suppliers
+        data_type: NUMBER
+        
+      - name: active_pos
+        expr: ACTIVE_POS
+        description: Number of open purchase orders
+        data_type: NUMBER
+        
+      - name: risk_exposure_amount
+        expr: RISK_EXPOSURE_AMOUNT
+        description: Total spend with high-risk suppliers (financial health < 50)
+        data_type: NUMBER
+        
+      - name: high_risk_supplier_count
+        expr: HIGH_RISK_SUPPLIER_COUNT
+        description: Number of suppliers with high financial risk
+        data_type: NUMBER
+        
+      - name: avg_esg_score
+        expr: AVG_ESG_SCORE
+        description: Average ESG score across supplier base
+        data_type: NUMBER
+        
+      - name: total_carbon_footprint_mt
+        expr: TOTAL_CARBON_FOOTPRINT_MT
+        description: Total carbon footprint in metric tons
+        data_type: NUMBER
+        
+      - name: erp_source_count
+        expr: ERP_SOURCE_COUNT
+        description: Number of distinct ERP source systems (50+)
+        data_type: NUMBER
+
+# =============================================================================
+# Verified Queries (Golden Queries)
+# =============================================================================
+verified_queries:
+  - name: top_5_emea_risky_suppliers
+    question: >
+      Show me the top 5 suppliers by spend in the EMEA region 
+      who have a financial health score below 50.
+    sql: |
+      SELECT 
+        SUPPLIER_NAME,
+        SUM(TOTAL_SPEND) AS total_spend,
+        AVG(FINANCIAL_HEALTH_SCORE) AS financial_health_score
+      FROM SNOWCORE_PROCUREMENT.PROCUREMENT_MART.V_SUPPLIER_RISK
+      WHERE REGION = 'EMEA'
+        AND FINANCIAL_HEALTH_SCORE < 50
+      GROUP BY SUPPLIER_NAME
+      ORDER BY total_spend DESC
+      LIMIT 5
+    verified: true
+    
+  - name: total_spend_by_region
+    question: What is our total spend by region?
+    sql: |
+      SELECT 
+        REGION,
+        SUM(SPEND_AMOUNT) AS total_spend
+      FROM SNOWCORE_PROCUREMENT.PROCUREMENT_MART.V_SPEND_SUMMARY
+      GROUP BY REGION
+      ORDER BY total_spend DESC
+    verified: true
+    
+  - name: high_risk_revenue_exposure
+    question: How much revenue is at risk from suppliers with poor financial health?
+    sql: |
+      SELECT 
+        SUM(REVENUE_AT_RISK) AS total_revenue_at_risk,
+        COUNT(DISTINCT SUPPLIER_CODE) AS supplier_count
+      FROM SNOWCORE_PROCUREMENT.PROCUREMENT_MART.V_SUPPLIER_RISK
+      WHERE FINANCIAL_HEALTH_SCORE < 50
+    verified: true
+    
+  - name: bioflow_precision_suppliers
+    question: >
+      Identify suppliers for BioFlow precision components 
+      with high financial risk scores.
+    sql: |
+      SELECT 
+        sr.SUPPLIER_NAME,
+        sr.FINANCIAL_HEALTH_SCORE,
+        sr.TOTAL_SPEND,
+        sr.REVENUE_AT_RISK,
+        sr.CREDIT_RATING
+      FROM SNOWCORE_PROCUREMENT.PROCUREMENT_MART.V_SUPPLIER_RISK sr
+      JOIN SNOWCORE_PROCUREMENT.PROCUREMENT_MART.V_SPEND_SUMMARY ss 
+        ON sr.SUPPLIER_CODE = ss.SUPPLIER_CODE
+      WHERE ss.MATERIAL_CATEGORY IN ('Precision Components', 'Bio-Robotics')
+        AND sr.FINANCIAL_HEALTH_SCORE < 50
+      GROUP BY sr.SUPPLIER_NAME, sr.FINANCIAL_HEALTH_SCORE, sr.TOTAL_SPEND, 
+               sr.REVENUE_AT_RISK, sr.CREDIT_RATING
+      ORDER BY sr.REVENUE_AT_RISK DESC
+    verified: true
+    
+  - name: should_cost_savings
+    question: What are the potential savings from should-cost analysis?
+    sql: |
+      SELECT 
+        MATERIAL_CATEGORY,
+        SUM(POTENTIAL_SAVINGS) AS potential_savings,
+        AVG(PRICE_VARIANCE_PCT) AS avg_variance_pct,
+        COUNT(*) AS line_count
+      FROM SNOWCORE_PROCUREMENT.PROCUREMENT_MART.V_SHOULD_COST_ANALYSIS
+      WHERE SHOULD_COST_RECOMMENDATION = 'RENEGOTIATE'
+      GROUP BY MATERIAL_CATEGORY
+      ORDER BY potential_savings DESC
+    verified: true

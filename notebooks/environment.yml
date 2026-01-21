@@ -1,0 +1,10 @@
+name: demand_sensing
+channels:
+  - snowflake
+dependencies:
+  - snowflake-snowpark-python
+  - snowflake-ml-python
+  - pandas
+  - numpy
+  - xgboost
+  - matplotlib

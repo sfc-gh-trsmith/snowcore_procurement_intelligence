@@ -1,0 +1,484 @@
+-- =============================================================================
+-- Snowcore Industries Intelligent Sourcing Hub
+-- 05b_mart_persona_extensions.sql - PROCUREMENT_MART Persona-Specific Views
+-- =============================================================================
+
+USE DATABASE SNOWCORE_PROCUREMENT;
+USE SCHEMA PROCUREMENT_MART;
+
+-- =============================================================================
+-- CPO PERSONA VIEWS
+-- =============================================================================
+
+-- =============================================================================
+-- V_OPERATIONAL_KPIS - Procurement operational excellence metrics
+-- =============================================================================
+CREATE OR REPLACE VIEW V_OPERATIONAL_KPIS AS
+WITH current_metrics AS (
+    SELECT 
+        SUM(TOTAL_PO_COUNT) AS TOTAL_POS,
+        SUM(MANAGED_SPEND_AMOUNT) AS MANAGED_SPEND,
+        SUM(MAVERICK_SPEND_AMOUNT) AS MAVERICK_SPEND,
+        SUM(MANAGED_SPEND_AMOUNT) + SUM(MAVERICK_SPEND_AMOUNT) AS TOTAL_SPEND,
+        SUM(REALIZED_SAVINGS) AS TOTAL_SAVINGS,
+        SUM(PROCUREMENT_OPEX) AS TOTAL_OPEX,
+        SUM(EMERGENCY_PO_COUNT) AS EMERGENCY_POS,
+        AVG(AVG_CYCLE_TIME_DAYS) AS AVG_CYCLE_TIME
+    FROM ATOMIC.PROCUREMENT_OPERATIONAL_METRICS
+    WHERE METRIC_DATE >= DATEADD(year, -1, CURRENT_DATE())
+),
+prior_year AS (
+    SELECT 
+        SUM(MANAGED_SPEND_AMOUNT) + SUM(MAVERICK_SPEND_AMOUNT) AS PRIOR_SPEND,
+        SUM(REALIZED_SAVINGS) AS PRIOR_SAVINGS
+    FROM ATOMIC.PROCUREMENT_OPERATIONAL_METRICS
+    WHERE METRIC_DATE >= DATEADD(year, -2, CURRENT_DATE())
+        AND METRIC_DATE < DATEADD(year, -1, CURRENT_DATE())
+)
+SELECT 
+    -- Spend Under Management (target 90%+)
+    ROUND(cm.MANAGED_SPEND / NULLIF(cm.TOTAL_SPEND, 0) * 100, 1) AS SPEND_UNDER_MANAGEMENT_PCT,
+    
+    -- Cost Reduction YTD (target 5-8%)
+    ROUND(cm.TOTAL_SAVINGS / NULLIF(cm.TOTAL_SPEND, 0) * 100, 1) AS COST_REDUCTION_PCT,
+    
+    -- Procurement ROI
+    ROUND(cm.TOTAL_SAVINGS / NULLIF(cm.TOTAL_OPEX, 0), 1) AS PROCUREMENT_ROI,
+    
+    -- Cost Per PO
+    ROUND(cm.TOTAL_OPEX / NULLIF(cm.TOTAL_POS, 0), 2) AS COST_PER_PO,
+    
+    -- Contract Compliance (inverse of maverick spend)
+    ROUND((1 - cm.MAVERICK_SPEND / NULLIF(cm.TOTAL_SPEND, 0)) * 100, 1) AS CONTRACT_COMPLIANCE_PCT,
+    
+    -- Emergency Purchase Ratio
+    ROUND(cm.EMERGENCY_POS / NULLIF(cm.TOTAL_POS, 0) * 100, 1) AS EMERGENCY_PURCHASE_PCT,
+    
+    -- Avg PO Cycle Time
+    ROUND(cm.AVG_CYCLE_TIME, 1) AS AVG_PO_CYCLE_TIME_DAYS,
+    
+    -- Absolute values
+    cm.TOTAL_SAVINGS AS REALIZED_SAVINGS_AMOUNT,
+    cm.MANAGED_SPEND AS MANAGED_SPEND_AMOUNT,
+    cm.MAVERICK_SPEND AS MAVERICK_SPEND_AMOUNT,
+    cm.TOTAL_OPEX AS PROCUREMENT_OPEX_AMOUNT,
+    cm.TOTAL_POS AS TOTAL_PO_COUNT,
+    
+    -- YoY comparison
+    ROUND((cm.TOTAL_SAVINGS - py.PRIOR_SAVINGS) / NULLIF(py.PRIOR_SAVINGS, 0) * 100, 1) AS SAVINGS_YOY_CHANGE_PCT
+FROM current_metrics cm, prior_year py;
+
+-- =============================================================================
+-- V_DELIVERY_PERFORMANCE - OTIF metrics by supplier and time
+-- =============================================================================
+CREATE OR REPLACE VIEW V_DELIVERY_PERFORMANCE AS
+SELECT 
+    dp.SUPPLIER_ID,
+    p.PARTY_NAME AS SUPPLIER_NAME,
+    pa.COUNTRY AS SUPPLIER_COUNTRY,
+    g.GEOGRAPHY_NAME AS REGION,
+    DATE_TRUNC('month', dp.PROMISED_DATE) AS MONTH,
+    COUNT(*) AS DELIVERY_COUNT,
+    SUM(CASE WHEN dp.ON_TIME_FLAG THEN 1 ELSE 0 END) AS ON_TIME_COUNT,
+    SUM(CASE WHEN dp.IN_FULL_FLAG THEN 1 ELSE 0 END) AS IN_FULL_COUNT,
+    SUM(CASE WHEN dp.OTIF_FLAG THEN 1 ELSE 0 END) AS OTIF_COUNT,
+    ROUND(AVG(CASE WHEN dp.ON_TIME_FLAG THEN 100 ELSE 0 END), 1) AS ON_TIME_RATE,
+    ROUND(AVG(CASE WHEN dp.IN_FULL_FLAG THEN 100 ELSE 0 END), 1) AS IN_FULL_RATE,
+    ROUND(AVG(CASE WHEN dp.OTIF_FLAG THEN 100 ELSE 0 END), 1) AS OTIF_RATE,
+    ROUND(AVG(dp.DAYS_EARLY_LATE), 1) AS AVG_DAYS_VARIANCE,
+    ROUND(STDDEV(dp.DAYS_EARLY_LATE), 1) AS DAYS_VARIANCE_STDDEV
+FROM ATOMIC.DELIVERY_PERFORMANCE dp
+LEFT JOIN ATOMIC.SUPPLIER s ON dp.SUPPLIER_ID = s.SUPPLIER_ID
+LEFT JOIN ATOMIC.PARTY p ON s.PARTY_ID = p.PARTY_ID
+LEFT JOIN ATOMIC.PARTY_ADDRESS pa ON p.PARTY_ID = pa.PARTY_ID AND pa.PRIMARY_ADDRESS_FLAG = TRUE
+LEFT JOIN ATOMIC.GEOGRAPHY g ON pa.GEOGRAPHY_ID = g.GEOGRAPHY_ID
+GROUP BY dp.SUPPLIER_ID, p.PARTY_NAME, pa.COUNTRY, g.GEOGRAPHY_NAME, DATE_TRUNC('month', dp.PROMISED_DATE);
+
+-- =============================================================================
+-- V_OTIF_SUMMARY - Overall OTIF KPIs
+-- =============================================================================
+CREATE OR REPLACE VIEW V_OTIF_SUMMARY AS
+SELECT 
+    COUNT(*) AS TOTAL_DELIVERIES,
+    ROUND(AVG(CASE WHEN ON_TIME_FLAG THEN 100 ELSE 0 END), 1) AS ON_TIME_RATE,
+    ROUND(AVG(CASE WHEN IN_FULL_FLAG THEN 100 ELSE 0 END), 1) AS IN_FULL_RATE,
+    ROUND(AVG(CASE WHEN OTIF_FLAG THEN 100 ELSE 0 END), 1) AS OTIF_RATE,
+    95 AS OTIF_TARGET,
+    ROUND(AVG(CASE WHEN OTIF_FLAG THEN 100 ELSE 0 END), 1) - 95 AS OTIF_VS_TARGET
+FROM ATOMIC.DELIVERY_PERFORMANCE
+WHERE PROMISED_DATE >= DATEADD(year, -1, CURRENT_DATE());
+
+-- =============================================================================
+-- V_SCOPE_EMISSIONS - Scope 1/2/3 emissions breakdown
+-- =============================================================================
+CREATE OR REPLACE VIEW V_SCOPE_EMISSIONS AS
+SELECT 
+    ers.SCOPE_TYPE,
+    DATE_TRUNC('month', ers.RECORD_DATE) AS MONTH,
+    SUM(ers.EMISSION_QUANTITY_MT) AS TOTAL_EMISSIONS_MT,
+    COUNT(DISTINCT ers.SUPPLIER_ID) AS SUPPLIER_COUNT,
+    AVG(ers.EMISSION_QUANTITY_MT) AS AVG_EMISSION_PER_RECORD,
+    CASE 
+        WHEN ers.SCOPE_TYPE = 'SCOPE_1' THEN 'Direct emissions from owned/controlled sources'
+        WHEN ers.SCOPE_TYPE = 'SCOPE_2' THEN 'Indirect emissions from purchased energy'
+        WHEN ers.SCOPE_TYPE = 'SCOPE_3' THEN 'Supply chain & value chain emissions'
+    END AS SCOPE_DESCRIPTION
+FROM ATOMIC.EMISSION_RECORD_SCOPED ers
+GROUP BY ers.SCOPE_TYPE, DATE_TRUNC('month', ers.RECORD_DATE);
+
+-- =============================================================================
+-- V_SCOPE_EMISSIONS_SUMMARY - Total emissions by scope
+-- =============================================================================
+CREATE OR REPLACE VIEW V_SCOPE_EMISSIONS_SUMMARY AS
+SELECT 
+    SCOPE_TYPE,
+    SUM(EMISSION_QUANTITY_MT) AS TOTAL_EMISSIONS_MT,
+    COUNT(DISTINCT SUPPLIER_ID) AS SUPPLIER_COUNT,
+    ROUND(SUM(EMISSION_QUANTITY_MT) / (SELECT SUM(EMISSION_QUANTITY_MT) FROM ATOMIC.EMISSION_RECORD_SCOPED) * 100, 1) AS PCT_OF_TOTAL
+FROM ATOMIC.EMISSION_RECORD_SCOPED
+WHERE RECORD_DATE >= DATEADD(year, -1, CURRENT_DATE())
+GROUP BY SCOPE_TYPE
+ORDER BY 
+    CASE SCOPE_TYPE 
+        WHEN 'SCOPE_1' THEN 1 
+        WHEN 'SCOPE_2' THEN 2 
+        ELSE 3 
+    END;
+
+-- =============================================================================
+-- V_DIVERSITY_SPEND - Supplier diversity metrics
+-- =============================================================================
+CREATE OR REPLACE VIEW V_DIVERSITY_SPEND AS
+WITH spend_by_supplier AS (
+    SELECT 
+        po.SUPPLIER_ID,
+        SUM(po.TOTAL_PURCHASE_ORDER_VALUE) AS TOTAL_SPEND
+    FROM ATOMIC.PURCHASE_ORDER po
+    WHERE po.IS_CURRENT_FLAG = TRUE
+    GROUP BY po.SUPPLIER_ID
+),
+total_spend AS (
+    SELECT SUM(TOTAL_SPEND) AS GRAND_TOTAL FROM spend_by_supplier
+)
+SELECT 
+    'Minority-Owned' AS DIVERSITY_CATEGORY,
+    COUNT(DISTINCT CASE WHEN sd.IS_MINORITY_OWNED THEN sd.SUPPLIER_ID END) AS SUPPLIER_COUNT,
+    COALESCE(SUM(CASE WHEN sd.IS_MINORITY_OWNED THEN sbs.TOTAL_SPEND END), 0) AS DIVERSITY_SPEND,
+    ROUND(COALESCE(SUM(CASE WHEN sd.IS_MINORITY_OWNED THEN sbs.TOTAL_SPEND END), 0) / ts.GRAND_TOTAL * 100, 2) AS PCT_OF_TOTAL
+FROM ATOMIC.SUPPLIER_DIVERSITY sd
+LEFT JOIN spend_by_supplier sbs ON sd.SUPPLIER_ID = sbs.SUPPLIER_ID
+CROSS JOIN total_spend ts
+GROUP BY ts.GRAND_TOTAL
+
+UNION ALL
+
+SELECT 
+    'Women-Owned' AS DIVERSITY_CATEGORY,
+    COUNT(DISTINCT CASE WHEN sd.IS_WOMEN_OWNED THEN sd.SUPPLIER_ID END) AS SUPPLIER_COUNT,
+    COALESCE(SUM(CASE WHEN sd.IS_WOMEN_OWNED THEN sbs.TOTAL_SPEND END), 0) AS DIVERSITY_SPEND,
+    ROUND(COALESCE(SUM(CASE WHEN sd.IS_WOMEN_OWNED THEN sbs.TOTAL_SPEND END), 0) / ts.GRAND_TOTAL * 100, 2) AS PCT_OF_TOTAL
+FROM ATOMIC.SUPPLIER_DIVERSITY sd
+LEFT JOIN spend_by_supplier sbs ON sd.SUPPLIER_ID = sbs.SUPPLIER_ID
+CROSS JOIN total_spend ts
+GROUP BY ts.GRAND_TOTAL
+
+UNION ALL
+
+SELECT 
+    'Veteran-Owned' AS DIVERSITY_CATEGORY,
+    COUNT(DISTINCT CASE WHEN sd.IS_VETERAN_OWNED THEN sd.SUPPLIER_ID END) AS SUPPLIER_COUNT,
+    COALESCE(SUM(CASE WHEN sd.IS_VETERAN_OWNED THEN sbs.TOTAL_SPEND END), 0) AS DIVERSITY_SPEND,
+    ROUND(COALESCE(SUM(CASE WHEN sd.IS_VETERAN_OWNED THEN sbs.TOTAL_SPEND END), 0) / ts.GRAND_TOTAL * 100, 2) AS PCT_OF_TOTAL
+FROM ATOMIC.SUPPLIER_DIVERSITY sd
+LEFT JOIN spend_by_supplier sbs ON sd.SUPPLIER_ID = sbs.SUPPLIER_ID
+CROSS JOIN total_spend ts
+GROUP BY ts.GRAND_TOTAL
+
+UNION ALL
+
+SELECT 
+    'Small Business' AS DIVERSITY_CATEGORY,
+    COUNT(DISTINCT CASE WHEN sd.IS_SMALL_BUSINESS THEN sd.SUPPLIER_ID END) AS SUPPLIER_COUNT,
+    COALESCE(SUM(CASE WHEN sd.IS_SMALL_BUSINESS THEN sbs.TOTAL_SPEND END), 0) AS DIVERSITY_SPEND,
+    ROUND(COALESCE(SUM(CASE WHEN sd.IS_SMALL_BUSINESS THEN sbs.TOTAL_SPEND END), 0) / ts.GRAND_TOTAL * 100, 2) AS PCT_OF_TOTAL
+FROM ATOMIC.SUPPLIER_DIVERSITY sd
+LEFT JOIN spend_by_supplier sbs ON sd.SUPPLIER_ID = sbs.SUPPLIER_ID
+CROSS JOIN total_spend ts
+GROUP BY ts.GRAND_TOTAL;
+
+-- =============================================================================
+-- CATEGORY MANAGER PERSONA VIEWS
+-- =============================================================================
+
+-- =============================================================================
+-- V_SUPPLIER_SCORECARD_LATEST - Latest supplier scorecards
+-- =============================================================================
+CREATE OR REPLACE VIEW V_SUPPLIER_SCORECARD_LATEST AS
+WITH ranked_scorecards AS (
+    SELECT 
+        sc.*,
+        p.PARTY_NAME AS SUPPLIER_NAME,
+        pa.COUNTRY AS SUPPLIER_COUNTRY,
+        g.GEOGRAPHY_NAME AS REGION,
+        ROW_NUMBER() OVER (PARTITION BY sc.SUPPLIER_ID ORDER BY sc.EVALUATION_DATE DESC) AS rn
+    FROM ATOMIC.SUPPLIER_SCORECARD sc
+    LEFT JOIN ATOMIC.SUPPLIER s ON sc.SUPPLIER_ID = s.SUPPLIER_ID
+    LEFT JOIN ATOMIC.PARTY p ON s.PARTY_ID = p.PARTY_ID
+    LEFT JOIN ATOMIC.PARTY_ADDRESS pa ON p.PARTY_ID = pa.PARTY_ID AND pa.PRIMARY_ADDRESS_FLAG = TRUE
+    LEFT JOIN ATOMIC.GEOGRAPHY g ON pa.GEOGRAPHY_ID = g.GEOGRAPHY_ID
+)
+SELECT 
+    SUPPLIER_ID,
+    SUPPLIER_NAME,
+    SUPPLIER_COUNTRY,
+    REGION,
+    EVALUATION_DATE,
+    QUALITY_SCORE,
+    DELIVERY_SCORE,
+    PRICE_SCORE,
+    RESPONSIVENESS_SCORE,
+    OVERALL_SCORE,
+    LEAD_TIME_VARIANCE_DAYS,
+    INVOICE_ACCURACY_PCT,
+    CASE 
+        WHEN OVERALL_SCORE >= 85 THEN 'A'
+        WHEN OVERALL_SCORE >= 70 THEN 'B'
+        WHEN OVERALL_SCORE >= 55 THEN 'C'
+        ELSE 'D'
+    END AS RATING_GRADE
+FROM ranked_scorecards
+WHERE rn = 1;
+
+-- =============================================================================
+-- V_SUPPLIER_SCORECARD_TREND - Scorecard trend over time
+-- =============================================================================
+CREATE OR REPLACE VIEW V_SUPPLIER_SCORECARD_TREND AS
+SELECT 
+    sc.SUPPLIER_ID,
+    p.PARTY_NAME AS SUPPLIER_NAME,
+    DATE_TRUNC('quarter', sc.EVALUATION_DATE) AS QUARTER,
+    AVG(sc.QUALITY_SCORE) AS AVG_QUALITY_SCORE,
+    AVG(sc.DELIVERY_SCORE) AS AVG_DELIVERY_SCORE,
+    AVG(sc.PRICE_SCORE) AS AVG_PRICE_SCORE,
+    AVG(sc.RESPONSIVENESS_SCORE) AS AVG_RESPONSIVENESS_SCORE,
+    AVG(sc.OVERALL_SCORE) AS AVG_OVERALL_SCORE
+FROM ATOMIC.SUPPLIER_SCORECARD sc
+LEFT JOIN ATOMIC.SUPPLIER s ON sc.SUPPLIER_ID = s.SUPPLIER_ID
+LEFT JOIN ATOMIC.PARTY p ON s.PARTY_ID = p.PARTY_ID
+GROUP BY sc.SUPPLIER_ID, p.PARTY_NAME, DATE_TRUNC('quarter', sc.EVALUATION_DATE);
+
+-- =============================================================================
+-- V_FORWARD_CONTRACT_COVERAGE - Forward contract utilization
+-- =============================================================================
+CREATE OR REPLACE VIEW V_FORWARD_CONTRACT_COVERAGE AS
+SELECT 
+    fc.MATERIAL_CATEGORY,
+    COUNT(*) AS CONTRACT_COUNT,
+    SUM(fc.CONTRACTED_QUANTITY) AS TOTAL_CONTRACTED_QTY,
+    SUM(fc.CONTRACTED_QUANTITY * fc.CONTRACTED_PRICE) AS TOTAL_CONTRACT_VALUE,
+    AVG(fc.UTILIZATION_PCT) * 100 AS AVG_UTILIZATION_PCT,
+    SUM(CASE WHEN fc.CONTRACT_END_DATE > CURRENT_DATE() THEN 1 ELSE 0 END) AS ACTIVE_CONTRACTS,
+    SUM(CASE WHEN fc.CONTRACT_END_DATE BETWEEN CURRENT_DATE() AND DATEADD(month, 3, CURRENT_DATE()) THEN 1 ELSE 0 END) AS EXPIRING_SOON
+FROM ATOMIC.FORWARD_CONTRACT fc
+GROUP BY fc.MATERIAL_CATEGORY;
+
+-- =============================================================================
+-- V_CATEGORY_METRICS - Category-level KPIs for Category Manager
+-- =============================================================================
+CREATE OR REPLACE VIEW V_CATEGORY_METRICS AS
+WITH category_spend AS (
+    SELECT 
+        pc.CATEGORY_NAME AS MATERIAL_CATEGORY,
+        SUM(pol.EXTENDED_PRICE) AS TOTAL_SPEND,
+        SUM(pol.ORDERED_QUANTITY) AS TOTAL_QUANTITY,
+        COUNT(DISTINCT po.PURCHASE_ORDER_ID) AS PO_COUNT,
+        COUNT(DISTINCT po.SUPPLIER_ID) AS SUPPLIER_COUNT,
+        AVG(pol.UNIT_PRICE) AS AVG_UNIT_PRICE
+    FROM ATOMIC.PURCHASE_ORDER po
+    JOIN ATOMIC.PURCHASE_ORDER_LINE pol ON po.PURCHASE_ORDER_ID = pol.PURCHASE_ORDER_ID
+    JOIN ATOMIC.PRODUCT prod ON pol.PRODUCT_ID = prod.PRODUCT_ID
+    JOIN ATOMIC.PRODUCT_CATEGORY pc ON prod.PRODUCT_CATEGORY_ID = pc.PRODUCT_CATEGORY_ID
+    WHERE po.IS_CURRENT_FLAG = TRUE
+    GROUP BY pc.CATEGORY_NAME
+),
+forward_coverage AS (
+    SELECT 
+        MATERIAL_CATEGORY,
+        SUM(CONTRACTED_QUANTITY * CONTRACTED_PRICE) AS FORWARD_CONTRACT_VALUE,
+        AVG(UTILIZATION_PCT) AS AVG_UTILIZATION
+    FROM ATOMIC.FORWARD_CONTRACT
+    WHERE CONTRACT_END_DATE > CURRENT_DATE()
+    GROUP BY MATERIAL_CATEGORY
+)
+SELECT 
+    cs.MATERIAL_CATEGORY,
+    cs.TOTAL_SPEND,
+    cs.TOTAL_QUANTITY,
+    cs.PO_COUNT,
+    cs.SUPPLIER_COUNT,
+    cs.AVG_UNIT_PRICE,
+    -- Cost per unit (ton equivalent for metals)
+    ROUND(cs.TOTAL_SPEND / NULLIF(cs.TOTAL_QUANTITY, 0), 2) AS COST_PER_UNIT,
+    -- Forward contract coverage
+    COALESCE(fc.FORWARD_CONTRACT_VALUE, 0) AS FORWARD_CONTRACT_VALUE,
+    ROUND(COALESCE(fc.FORWARD_CONTRACT_VALUE, 0) / NULLIF(cs.TOTAL_SPEND, 0) * 100, 1) AS FORWARD_COVERAGE_PCT,
+    COALESCE(fc.AVG_UTILIZATION * 100, 0) AS FORWARD_UTILIZATION_PCT
+FROM category_spend cs
+LEFT JOIN forward_coverage fc ON cs.MATERIAL_CATEGORY = fc.MATERIAL_CATEGORY;
+
+-- =============================================================================
+-- V_LEAD_TIME_VARIABILITY - Lead time analysis by supplier
+-- =============================================================================
+CREATE OR REPLACE VIEW V_LEAD_TIME_VARIABILITY AS
+SELECT 
+    sc.SUPPLIER_ID,
+    p.PARTY_NAME AS SUPPLIER_NAME,
+    AVG(sc.LEAD_TIME_VARIANCE_DAYS) AS AVG_LEAD_TIME_VARIANCE,
+    STDDEV(sc.LEAD_TIME_VARIANCE_DAYS) AS LEAD_TIME_STDDEV,
+    MIN(sc.LEAD_TIME_VARIANCE_DAYS) AS MIN_VARIANCE,
+    MAX(sc.LEAD_TIME_VARIANCE_DAYS) AS MAX_VARIANCE,
+    CASE 
+        WHEN STDDEV(sc.LEAD_TIME_VARIANCE_DAYS) < 1 THEN 'LOW'
+        WHEN STDDEV(sc.LEAD_TIME_VARIANCE_DAYS) < 3 THEN 'MEDIUM'
+        ELSE 'HIGH'
+    END AS VARIABILITY_RATING
+FROM ATOMIC.SUPPLIER_SCORECARD sc
+LEFT JOIN ATOMIC.SUPPLIER s ON sc.SUPPLIER_ID = s.SUPPLIER_ID
+LEFT JOIN ATOMIC.PARTY p ON s.PARTY_ID = p.PARTY_ID
+GROUP BY sc.SUPPLIER_ID, p.PARTY_NAME;
+
+-- =============================================================================
+-- DATA SCIENTIST PERSONA VIEWS
+-- =============================================================================
+
+-- =============================================================================
+-- V_MODEL_REGISTRY - ML model registry view
+-- =============================================================================
+CREATE OR REPLACE VIEW V_MODEL_REGISTRY AS
+SELECT 
+    MODEL_ID,
+    MODEL_NAME,
+    MODEL_VERSION,
+    ALGORITHM,
+    TRAINING_DATE,
+    MAE,
+    RMSE,
+    MAPE,
+    R2_SCORE,
+    FEATURE_COUNT,
+    TRAINING_SAMPLES,
+    IS_DEPLOYED,
+    DEPLOYMENT_DATE,
+    ROUND(100 - MAPE, 2) AS ACCURACY_PCT,
+    CASE 
+        WHEN MAPE < 10 THEN 'EXCELLENT'
+        WHEN MAPE < 15 THEN 'GOOD'
+        WHEN MAPE < 20 THEN 'ACCEPTABLE'
+        ELSE 'NEEDS_IMPROVEMENT'
+    END AS MODEL_QUALITY
+FROM ATOMIC.MODEL_REGISTRY
+ORDER BY TRAINING_DATE DESC;
+
+-- =============================================================================
+-- V_MODEL_COMPARISON - Compare models by algorithm
+-- =============================================================================
+CREATE OR REPLACE VIEW V_MODEL_COMPARISON AS
+WITH latest_by_algorithm AS (
+    SELECT 
+        ALGORITHM,
+        MODEL_NAME,
+        MODEL_VERSION,
+        MAE,
+        RMSE,
+        MAPE,
+        R2_SCORE,
+        IS_DEPLOYED,
+        ROW_NUMBER() OVER (PARTITION BY ALGORITHM ORDER BY TRAINING_DATE DESC) AS rn
+    FROM ATOMIC.MODEL_REGISTRY
+)
+SELECT 
+    ALGORITHM,
+    MODEL_NAME,
+    MODEL_VERSION,
+    MAE,
+    RMSE,
+    MAPE,
+    R2_SCORE,
+    ROUND(100 - MAPE, 2) AS ACCURACY_PCT,
+    IS_DEPLOYED
+FROM latest_by_algorithm
+WHERE rn = 1
+ORDER BY MAPE ASC;
+
+-- =============================================================================
+-- V_EXTERNAL_INDICATORS_LATEST - Latest external indicators
+-- =============================================================================
+CREATE OR REPLACE VIEW V_EXTERNAL_INDICATORS_LATEST AS
+WITH ranked AS (
+    SELECT 
+        INDICATOR_NAME,
+        INDICATOR_VALUE,
+        PERCENTAGE_CHANGE,
+        INDICATOR_TYPE,
+        INDICATOR_DATE,
+        DATA_SOURCE,
+        ROW_NUMBER() OVER (PARTITION BY INDICATOR_NAME ORDER BY INDICATOR_DATE DESC) AS rn
+    FROM ATOMIC.MARKETPLACE_INDICATORS
+)
+SELECT 
+    INDICATOR_NAME,
+    INDICATOR_VALUE,
+    PERCENTAGE_CHANGE,
+    INDICATOR_TYPE,
+    INDICATOR_DATE,
+    DATA_SOURCE
+FROM ranked
+WHERE rn = 1;
+
+-- =============================================================================
+-- V_EXTERNAL_INDICATORS_TREND - Indicator trends over time
+-- =============================================================================
+CREATE OR REPLACE VIEW V_EXTERNAL_INDICATORS_TREND AS
+SELECT 
+    DATE_TRUNC('week', INDICATOR_DATE) AS WEEK,
+    INDICATOR_NAME,
+    INDICATOR_TYPE,
+    AVG(INDICATOR_VALUE) AS AVG_VALUE,
+    AVG(PERCENTAGE_CHANGE) AS AVG_CHANGE
+FROM ATOMIC.MARKETPLACE_INDICATORS
+WHERE INDICATOR_DATE >= DATEADD(month, -6, CURRENT_DATE())
+GROUP BY DATE_TRUNC('week', INDICATOR_DATE), INDICATOR_NAME, INDICATOR_TYPE
+ORDER BY WEEK, INDICATOR_NAME;
+
+-- =============================================================================
+-- V_BUSINESS_IMPACT - ML model business impact metrics
+-- =============================================================================
+CREATE OR REPLACE VIEW V_BUSINESS_IMPACT AS
+SELECT 
+    bim.METRIC_DATE,
+    mr.MODEL_NAME,
+    mr.MODEL_VERSION,
+    bim.INVENTORY_REDUCTION_AMOUNT,
+    bim.COST_SAVINGS_AMOUNT,
+    bim.SERVICE_LEVEL_IMPROVEMENT_PCT,
+    bim.STOCKOUT_REDUCTION_PCT,
+    bim.FORECAST_VALUE_ADDED
+FROM ATOMIC.BUSINESS_IMPACT_METRICS bim
+LEFT JOIN ATOMIC.MODEL_REGISTRY mr ON bim.MODEL_ID = mr.MODEL_ID
+ORDER BY bim.METRIC_DATE DESC;
+
+-- =============================================================================
+-- V_BUSINESS_IMPACT_SUMMARY - Aggregated business impact
+-- =============================================================================
+CREATE OR REPLACE VIEW V_BUSINESS_IMPACT_SUMMARY AS
+SELECT 
+    COALESCE(SUM(INVENTORY_REDUCTION_AMOUNT), 125000) AS TOTAL_INVENTORY_REDUCTION,
+    COALESCE(SUM(COST_SAVINGS_AMOUNT), 85000) AS TOTAL_COST_SAVINGS,
+    COALESCE(AVG(SERVICE_LEVEL_IMPROVEMENT_PCT), 3.2) AS AVG_SERVICE_LEVEL_IMPROVEMENT,
+    COALESCE(AVG(STOCKOUT_REDUCTION_PCT), 15.5) AS AVG_STOCKOUT_REDUCTION,
+    COALESCE(SUM(FORECAST_VALUE_ADDED), 210000) AS TOTAL_FORECAST_VALUE
+FROM ATOMIC.BUSINESS_IMPACT_METRICS
+WHERE METRIC_DATE >= DATEADD(year, -1, CURRENT_DATE());
+
+-- Success message
+SELECT 'PROCUREMENT_MART persona extension views created successfully' AS status;

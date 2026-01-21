@@ -1,0 +1,16 @@
+# Snowflake Notebook Configuration
+# Demand Sensing Model for Snowcore Procurement Intelligence
+
+definition_version: 2
+entities:
+  demand_sensing:
+    type: notebook
+    identifier:
+      name: DEMAND_SENSING
+      schema: NOTEBOOKS
+      database: SNOWCORE_PROCUREMENT
+    notebook_file: demand_sensing.ipynb
+    query_warehouse: COMPUTE_WH
+    artifacts:
+      - demand_sensing.ipynb
+      - environment.yml
