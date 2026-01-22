@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E2530"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <linearGradient id="alertGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="100%" style="stop-color:#FF8E8E"/>
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#29B5E8"/>
+      <stop offset="100%" style="stop-color:#1E8BB8"/>
+    </linearGradient>
+    <!-- Drop shadow -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600">The Cost of Fragmented Procurement Data</text>
+  <text x="600" y="80" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="14">Why Siloed ERPs Create Millions in Hidden Costs</text>
+  
+  <!-- PANEL 1: Siloed ERPs (Left) -->
+  <g transform="translate(40, 120)">
+    <!-- Card background -->
+    <rect width="340" height="460" rx="12" fill="url(#cardGradient)" filter="url(#dropShadow)"/>
+    <rect width="340" height="4" rx="2" fill="#29B5E8" y="0"/>
+    
+    <!-- Header -->
+    <text x="170" y="40" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">DATA FRAGMENTATION</text>
+    
+    <!-- Large number -->
+    <text x="170" y="100" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700">50+</text>
+    <text x="170" y="130" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="16">Legacy ERP Systems</text>
+    
+    <!-- Scattered database icons representing silos -->
+    <g transform="translate(40, 160)">
+      <!-- Row 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">SAP</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">NA-01</text>
+      </g>
+      <g transform="translate(68, 0)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">Oracle</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">EU-03</text>
+      </g>
+      <g transform="translate(136, 0)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">JDE</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">APAC</text>
+      </g>
+      <g transform="translate(204, 0)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">SAP</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">NA-02</text>
+      </g>
+      
+      <!-- Row 2 -->
+      <g transform="translate(0, 62)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">BioFlow</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">LS-01</text>
+      </g>
+      <g transform="translate(68, 62)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">Legacy</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">MFG-7</text>
+      </g>
+      <g transform="translate(136, 62)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#444C56" stroke-width="1"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">Oracle</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">LATAM</text>
+      </g>
+      <g transform="translate(204, 62)">
+        <rect width="56" height="50" rx="6" fill="#2D333B" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="4,2"/>
+        <text x="28" y="25" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">+44</text>
+        <text x="28" y="38" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">more</text>
+      </g>
+    </g>
+    
+    <!-- Disconnection lines -->
+    <g transform="translate(40, 300)" stroke="#FF6B6B" stroke-width="1" stroke-dasharray="4,4" opacity="0.5">
+      <line x1="28" y1="0" x2="96" y2="30"/>
+      <line x1="96" y1="0" x2="164" y2="30"/>
+      <line x1="164" y1="0" x2="96" y2="30"/>
+      <line x1="232" y1="0" x2="164" y2="30"/>
+    </g>
+    
+    <!-- Caption -->
+    <text x="170" y="380" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500">No Single Source of Truth</text>
+    <text x="170" y="405" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="12">Each system operates in isolation</text>
+    <text x="170" y="425" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="12">with incompatible data formats</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g transform="translate(395, 350)">
+    <path d="M0,0 L50,0 L40,-8 M50,0 L40,8" stroke="#444C56" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- PANEL 2: Pain Points (Center) -->
+  <g transform="translate(430, 120)">
+    <!-- Card background -->
+    <rect width="340" height="460" rx="12" fill="url(#cardGradient)" filter="url(#dropShadow)"/>
+    <rect width="340" height="4" rx="2" fill="#FFD93D" y="0"/>
+    
+    <!-- Header -->
+    <text x="170" y="40" text-anchor="middle" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">OPERATIONAL IMPACT</text>
+    
+    <!-- Pain point 1: Time to Insight -->
+    <g transform="translate(24, 70)">
+      <rect width="292" height="80" rx="8" fill="#21262D"/>
+      <!-- Clock icon -->
+      <circle cx="50" cy="40" r="24" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+      <line x1="50" y1="40" x2="50" y2="28" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/>
+      <line x1="50" y1="40" x2="62" y2="40" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"/>
+      <text x="90" y="32" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700">WEEKS</text>
+      <text x="90" y="52" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="13">to consolidate spend data</text>
+      <text x="90" y="68" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Manual spreadsheet reconciliation</text>
+    </g>
+    
+    <!-- Pain point 2: Blind Spots -->
+    <g transform="translate(24, 165)">
+      <rect width="292" height="80" rx="8" fill="#21262D"/>
+      <!-- Eye with slash icon -->
+      <circle cx="50" cy="40" r="20" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+      <circle cx="50" cy="40" r="8" fill="#FF6B6B"/>
+      <line x1="30" y1="60" x2="70" y2="20" stroke="#21262D" stroke-width="6"/>
+      <line x1="30" y1="60" x2="70" y2="20" stroke="#FF6B6B" stroke-width="2"/>
+      <text x="90" y="32" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700">0%</text>
+      <text x="90" y="52" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="13">supplier risk visibility</text>
+      <text x="90" y="68" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">No external risk data integration</text>
+    </g>
+    
+    <!-- Pain point 3: Overpayments -->
+    <g transform="translate(24, 260)">
+      <rect width="292" height="80" rx="8" fill="#21262D"/>
+      <!-- Dollar with arrow up icon -->
+      <circle cx="50" cy="40" r="20" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+      <text x="50" y="47" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">$</text>
+      <path d="M68,32 L74,22 L80,32 M74,22 L74,50" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <text x="98" y="32" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700">5-8%</text>
+      <text x="98" y="52" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="13">price variance undetected</text>
+      <text x="98" y="68" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">No market index comparison</text>
+    </g>
+    
+    <!-- Pain point 4: Reactive -->
+    <g transform="translate(24, 355)">
+      <rect width="292" height="80" rx="8" fill="#21262D"/>
+      <!-- Warning triangle icon -->
+      <path d="M50,22 L72,60 L28,60 Z" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-linejoin="round"/>
+      <text x="50" y="52" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">!</text>
+      <text x="90" y="32" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">REACTIVE</text>
+      <text x="90" y="52" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="13">to supply disruptions</text>
+      <text x="90" y="68" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">No early warning system</text>
+    </g>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g transform="translate(785, 350)">
+    <path d="M0,0 L50,0 L40,-8 M50,0 L40,8" stroke="#444C56" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- PANEL 3: Dollar Impact (Right) -->
+  <g transform="translate(820, 120)">
+    <!-- Card background -->
+    <rect width="340" height="460" rx="12" fill="url(#cardGradient)" filter="url(#dropShadow)"/>
+    <rect width="340" height="4" rx="2" fill="url(#alertGradient)" y="0"/>
+    
+    <!-- Header -->
+    <text x="170" y="40" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">ANNUAL FINANCIAL EXPOSURE</text>
+    
+    <!-- Large dollar amount -->
+    <text x="170" y="140" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700">$4.2M</text>
+    <text x="170" y="175" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="18">At-Risk Annually</text>
+    
+    <!-- Breakdown -->
+    <g transform="translate(30, 210)">
+      <rect width="280" height="200" rx="8" fill="#21262D"/>
+      
+      <!-- Item 1 -->
+      <g transform="translate(20, 25)">
+        <rect width="8" height="8" rx="2" fill="#FF6B6B"/>
+        <text x="20" y="8" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500">Material Cost Variance</text>
+        <text x="220" y="8" text-anchor="end" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">$2.1M</text>
+        <text x="20" y="26" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Overpaying vs market indices</text>
+      </g>
+      
+      <!-- Item 2 -->
+      <g transform="translate(20, 75)">
+        <rect width="8" height="8" rx="2" fill="#FFD93D"/>
+        <text x="20" y="8" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500">Supplier Disruption Risk</text>
+        <text x="220" y="8" text-anchor="end" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">$1.4M</text>
+        <text x="20" y="26" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Unmonitored financial health</text>
+      </g>
+      
+      <!-- Item 3 -->
+      <g transform="translate(20, 125)">
+        <rect width="8" height="8" rx="2" fill="#29B5E8"/>
+        <text x="20" y="8" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500">Inventory Inefficiency</text>
+        <text x="220" y="8" text-anchor="end" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">$0.7M</text>
+        <text x="20" y="26" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Inaccurate demand forecasts</text>
+      </g>
+      
+      <!-- Divider -->
+      <line x1="20" y1="165" x2="260" y2="165" stroke="#444C56" stroke-width="1"/>
+      
+      <!-- Total -->
+      <g transform="translate(20, 180)">
+        <text x="0" y="8" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Total Annual Exposure</text>
+        <text x="220" y="8" text-anchor="end" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">$4.2M</text>
+      </g>
+    </g>
+    
+    <!-- Call to action -->
+    <text x="170" y="440" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="12" font-style="italic">"Every week without visibility costs $80K+"</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="670" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Snowcore Industries | Procurement Intelligence Assessment</text>
+</svg>

@@ -1,0 +1,408 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <linearGradient id="rawGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D1F2D"/>
+      <stop offset="100%" style="stop-color:#1E1E1E"/>
+    </linearGradient>
+    <linearGradient id="atomicGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F2D2D"/>
+      <stop offset="100%" style="stop-color:#1E1E1E"/>
+    </linearGradient>
+    <linearGradient id="martGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D2840"/>
+      <stop offset="100%" style="stop-color:#1E1E1E"/>
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#29B5E8"/>
+      <stop offset="100%" style="stop-color:#1E8BB8"/>
+    </linearGradient>
+    <!-- Filters -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444C56"/>
+    </marker>
+    <marker id="arrowheadBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#29B5E8"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="600">Data Architecture Layers</text>
+  <text x="600" y="65" text-anchor="middle" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="13">Medallion Architecture: RAW to ATOMIC to MART</text>
+  
+  <!-- Layer labels at top -->
+  <g transform="translate(0, 90)">
+    <!-- RAW Layer Header -->
+    <g transform="translate(60, 0)">
+      <rect width="280" height="36" rx="6" fill="#FF6B6B" opacity="0.15"/>
+      <rect width="4" height="36" rx="2" fill="#FF6B6B"/>
+      <text x="20" y="24" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">RAW LAYER</text>
+      <text x="150" y="24" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Source Ingestion</text>
+    </g>
+    
+    <!-- ATOMIC Layer Header -->
+    <g transform="translate(420, 0)">
+      <rect width="340" height="36" rx="6" fill="#6BCB77" opacity="0.15"/>
+      <rect width="4" height="36" rx="2" fill="#6BCB77"/>
+      <text x="20" y="24" fill="#6BCB77" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">ATOMIC LAYER</text>
+      <text x="180" y="24" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Normalized EDM (Dynamic Tables)</text>
+    </g>
+    
+    <!-- MART Layer Header -->
+    <g transform="translate(840, 0)">
+      <rect width="300" height="36" rx="6" fill="#29B5E8" opacity="0.15"/>
+      <rect width="4" height="36" rx="2" fill="#29B5E8"/>
+      <text x="20" y="24" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">MART LAYER</text>
+      <text x="170" y="24" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Consumption Views</text>
+    </g>
+  </g>
+  
+  <!-- ==================== RAW LAYER TABLES ==================== -->
+  <g transform="translate(60, 150)">
+    <!-- ERP_SAP_NA -->
+    <g transform="translate(0, 0)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FF6B6B" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FF6B6B" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">ERP_SAP_NA</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">po_id, vendor_id</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">material_code</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">amount_usd, date</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">12 systems</text>
+    </g>
+    
+    <!-- ERP_ORACLE_EU -->
+    <g transform="translate(145, 0)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FF6B6B" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FF6B6B" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">ERP_ORACLE_EU</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">order_num, supplier</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">item_sku, qty</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">price_eur, ts</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">18 systems</text>
+    </g>
+    
+    <!-- ERP_JDE_APAC -->
+    <g transform="translate(0, 110)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FF6B6B" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FF6B6B" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">ERP_JDE_APAC</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">doc_no, vendor_no</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">part_num, unit_cost</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">currency, txn_dt</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">15 systems</text>
+    </g>
+    
+    <!-- ERP_BIOFLOW_LS -->
+    <g transform="translate(145, 110)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FF6B6B" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FF6B6B" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FF6B6B" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">ERP_BIOFLOW_LS</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">req_id, supplier_code</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">reagent_id, lot_num</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">unit_price, recv_dt</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">5 systems</text>
+    </g>
+    
+    <!-- +More indicator -->
+    <g transform="translate(0, 220)">
+      <rect width="275" height="35" rx="6" fill="#21262D" stroke="#444C56" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="137" y="22" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">+ Additional Legacy Systems (50+ total)</text>
+    </g>
+    
+    <!-- Marketplace Sources -->
+    <g transform="translate(0, 280)">
+      <rect width="275" height="4" rx="2" fill="#444C56"/>
+    </g>
+    
+    <!-- MARKETPLACE_RISK -->
+    <g transform="translate(0, 300)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FFD93D" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FFD93D" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">MKTPLACE_RISK</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">company_id</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">financial_score</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">credit_rating</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Marketplace</text>
+    </g>
+    
+    <!-- MARKETPLACE_COMMODITY -->
+    <g transform="translate(145, 300)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FFD93D" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FFD93D" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">MKTPLACE_CMDTY</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">commodity_id</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">spot_price, index</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">as_of_date</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Marketplace</text>
+    </g>
+    
+    <!-- MARKETPLACE_ESG -->
+    <g transform="translate(0, 410)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FFD93D" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FFD93D" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">MKTPLACE_ESG</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">company_id</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">esg_score, carbon</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">sustainability_rating</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Marketplace</text>
+    </g>
+    
+    <!-- MARKETPLACE_INDICATORS -->
+    <g transform="translate(145, 410)" filter="url(#dropShadow)">
+      <rect width="130" height="90" rx="8" fill="url(#rawGradient)" stroke="#FFD93D" stroke-width="1"/>
+      <rect width="130" height="28" rx="8" fill="#FFD93D" opacity="0.2"/>
+      <text x="65" y="19" text-anchor="middle" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">MKTPLACE_INDIC</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">indicator_type</text>
+      <text x="10" y="58" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">construction_idx</text>
+      <text x="10" y="71" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">clinical_trial_spend</text>
+      <text x="10" y="84" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Marketplace</text>
+    </g>
+  </g>
+  
+  <!-- ==================== ATOMIC LAYER TABLES ==================== -->
+  <g transform="translate(420, 150)">
+    <!-- SUPPLIERS_UNIFIED -->
+    <g transform="translate(0, 0)" filter="url(#dropShadow)">
+      <rect width="160" height="130" rx="8" fill="url(#atomicGradient)" stroke="#6BCB77" stroke-width="1.5"/>
+      <rect width="160" height="32" rx="8" fill="#6BCB77" opacity="0.2"/>
+      <text x="80" y="21" text-anchor="middle" fill="#6BCB77" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">SUPPLIERS_UNIFIED</text>
+      <line x1="10" y1="40" x2="150" y2="40" stroke="#444C56" stroke-width="1"/>
+      <text x="10" y="55" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">PK</text>
+      <text x="30" y="55" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_id</text>
+      <text x="10" y="70" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_name</text>
+      <text x="10" y="85" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">country, region</text>
+      <text x="10" y="100" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">category, division</text>
+      <text x="10" y="115" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Dynamic Table | 1hr lag</text>
+    </g>
+    
+    <!-- PURCHASE_ORDERS_UNIFIED -->
+    <g transform="translate(175, 0)" filter="url(#dropShadow)">
+      <rect width="160" height="130" rx="8" fill="url(#atomicGradient)" stroke="#6BCB77" stroke-width="1.5"/>
+      <rect width="160" height="32" rx="8" fill="#6BCB77" opacity="0.2"/>
+      <text x="80" y="21" text-anchor="middle" fill="#6BCB77" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">PO_UNIFIED</text>
+      <line x1="10" y1="40" x2="150" y2="40" stroke="#444C56" stroke-width="1"/>
+      <text x="10" y="55" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">PK</text>
+      <text x="30" y="55" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="9">po_id</text>
+      <text x="10" y="70" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">FK</text>
+      <text x="30" y="70" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_id</text>
+      <text x="10" y="85" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">material_sku, qty</text>
+      <text x="10" y="100" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">unit_price_usd, date</text>
+      <text x="10" y="115" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Dynamic Table | 1hr lag</text>
+    </g>
+    
+    <!-- MATERIALS_UNIFIED -->
+    <g transform="translate(0, 150)" filter="url(#dropShadow)">
+      <rect width="160" height="115" rx="8" fill="url(#atomicGradient)" stroke="#6BCB77" stroke-width="1.5"/>
+      <rect width="160" height="32" rx="8" fill="#6BCB77" opacity="0.2"/>
+      <text x="80" y="21" text-anchor="middle" fill="#6BCB77" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">MATERIALS_UNIFIED</text>
+      <line x1="10" y1="40" x2="150" y2="40" stroke="#444C56" stroke-width="1"/>
+      <text x="10" y="55" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">PK</text>
+      <text x="30" y="55" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="9">material_sku</text>
+      <text x="10" y="70" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">material_name</text>
+      <text x="10" y="85" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">category, commodity</text>
+      <text x="10" y="100" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Dynamic Table | 1hr lag</text>
+    </g>
+    
+    <!-- MARKETPLACE_ENRICHED -->
+    <g transform="translate(175, 150)" filter="url(#dropShadow)">
+      <rect width="160" height="115" rx="8" fill="url(#atomicGradient)" stroke="#6BCB77" stroke-width="1.5"/>
+      <rect width="160" height="32" rx="8" fill="#6BCB77" opacity="0.2"/>
+      <text x="80" y="21" text-anchor="middle" fill="#6BCB77" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">MKTPLACE_ENRICHED</text>
+      <line x1="10" y1="40" x2="150" y2="40" stroke="#444C56" stroke-width="1"/>
+      <text x="10" y="55" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">FK</text>
+      <text x="30" y="55" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_id</text>
+      <text x="10" y="70" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">financial_health_score</text>
+      <text x="10" y="85" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">esg_score, risk_level</text>
+      <text x="10" y="100" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Dynamic Table | 1hr lag</text>
+    </g>
+    
+    <!-- COMMODITY_PRICES -->
+    <g transform="translate(0, 285)" filter="url(#dropShadow)">
+      <rect width="160" height="115" rx="8" fill="url(#atomicGradient)" stroke="#6BCB77" stroke-width="1.5"/>
+      <rect width="160" height="32" rx="8" fill="#6BCB77" opacity="0.2"/>
+      <text x="80" y="21" text-anchor="middle" fill="#6BCB77" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">COMMODITY_PRICES</text>
+      <line x1="10" y1="40" x2="150" y2="40" stroke="#444C56" stroke-width="1"/>
+      <text x="10" y="55" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">PK</text>
+      <text x="30" y="55" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="9">commodity_id, date</text>
+      <text x="10" y="70" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">spot_price_usd</text>
+      <text x="10" y="85" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">index_value, change</text>
+      <text x="10" y="100" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Dynamic Table | 1hr lag</text>
+    </g>
+    
+    <!-- DEMAND_FORECAST_PREDICTIONS -->
+    <g transform="translate(175, 285)" filter="url(#dropShadow)">
+      <rect width="160" height="115" rx="8" fill="url(#atomicGradient)" stroke="#FFD93D" stroke-width="1.5"/>
+      <rect width="160" height="32" rx="8" fill="#FFD93D" opacity="0.2"/>
+      <text x="80" y="21" text-anchor="middle" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">DEMAND_FORECAST</text>
+      <line x1="10" y1="40" x2="150" y2="40" stroke="#444C56" stroke-width="1"/>
+      <text x="10" y="55" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">FK</text>
+      <text x="30" y="55" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">material_sku</text>
+      <text x="10" y="70" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">forecast_date, qty</text>
+      <text x="10" y="85" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">confidence_interval</text>
+      <text x="10" y="100" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">ML Model Output</text>
+    </g>
+  </g>
+  
+  <!-- ==================== MART LAYER VIEWS ==================== -->
+  <g transform="translate(840, 150)">
+    <!-- V_EXECUTIVE_KPIS -->
+    <g transform="translate(0, 0)" filter="url(#dropShadow)">
+      <rect width="150" height="100" rx="8" fill="url(#martGradient)" stroke="#29B5E8" stroke-width="1.5"/>
+      <rect width="150" height="28" rx="8" fill="#29B5E8" opacity="0.2"/>
+      <text x="75" y="19" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">V_EXECUTIVE_KPIS</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">total_spend, ppv</text>
+      <text x="10" y="60" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">risk_exposure</text>
+      <text x="10" y="75" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">esg_score_avg</text>
+      <text x="10" y="90" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Executive Control Tower</text>
+    </g>
+    
+    <!-- V_SUPPLIER_RISK -->
+    <g transform="translate(160, 0)" filter="url(#dropShadow)">
+      <rect width="150" height="100" rx="8" fill="url(#martGradient)" stroke="#29B5E8" stroke-width="1.5"/>
+      <rect width="150" height="28" rx="8" fill="#29B5E8" opacity="0.2"/>
+      <text x="75" y="19" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">V_SUPPLIER_RISK</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_id, name</text>
+      <text x="10" y="60" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">risk_level, spend</text>
+      <text x="10" y="75" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">revenue_at_risk</text>
+      <text x="10" y="90" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Risk Map, Alerts</text>
+    </g>
+    
+    <!-- V_SHOULD_COST -->
+    <g transform="translate(0, 120)" filter="url(#dropShadow)">
+      <rect width="150" height="100" rx="8" fill="url(#martGradient)" stroke="#29B5E8" stroke-width="1.5"/>
+      <rect width="150" height="28" rx="8" fill="#29B5E8" opacity="0.2"/>
+      <text x="75" y="19" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">V_SHOULD_COST</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">material, supplier</text>
+      <text x="10" y="60" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">contract_price</text>
+      <text x="10" y="75" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">market_price, variance</text>
+      <text x="10" y="90" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Category Workbench</text>
+    </g>
+    
+    <!-- V_DEMAND_FORECAST -->
+    <g transform="translate(160, 120)" filter="url(#dropShadow)">
+      <rect width="150" height="100" rx="8" fill="url(#martGradient)" stroke="#29B5E8" stroke-width="1.5"/>
+      <rect width="150" height="28" rx="8" fill="#29B5E8" opacity="0.2"/>
+      <text x="75" y="19" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">V_DEMAND_FORECAST</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">material_sku</text>
+      <text x="10" y="60" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">forecast_90d</text>
+      <text x="10" y="75" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">accuracy, ci_bounds</text>
+      <text x="10" y="90" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Data Science Workbench</text>
+    </g>
+    
+    <!-- V_ESG_SUMMARY -->
+    <g transform="translate(0, 240)" filter="url(#dropShadow)">
+      <rect width="150" height="100" rx="8" fill="url(#martGradient)" stroke="#29B5E8" stroke-width="1.5"/>
+      <rect width="150" height="28" rx="8" fill="#29B5E8" opacity="0.2"/>
+      <text x="75" y="19" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">V_ESG_SUMMARY</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_id</text>
+      <text x="10" y="60" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">esg_composite</text>
+      <text x="10" y="75" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">carbon_mt, targets</text>
+      <text x="10" y="90" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Sustainability Tracking</text>
+    </g>
+    
+    <!-- V_CONCENTRATION_ANALYSIS -->
+    <g transform="translate(160, 240)" filter="url(#dropShadow)">
+      <rect width="150" height="100" rx="8" fill="url(#martGradient)" stroke="#29B5E8" stroke-width="1.5"/>
+      <rect width="150" height="28" rx="8" fill="#29B5E8" opacity="0.2"/>
+      <text x="75" y="19" text-anchor="middle" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">V_CONCENTRATION</text>
+      <text x="10" y="45" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">dimension (region/cat)</text>
+      <text x="10" y="60" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">concentration_pct</text>
+      <text x="10" y="75" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="9">supplier_count</text>
+      <text x="10" y="90" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="8">Risk Analysis</text>
+    </g>
+  </g>
+  
+  <!-- ==================== ARROWS AND FLOW ==================== -->
+  <!-- RAW to ATOMIC arrows -->
+  <g stroke="#444C56" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)">
+    <!-- ERP to SUPPLIERS -->
+    <path d="M340,200 Q380,200 400,200"/>
+    <!-- ERP to PO -->
+    <path d="M340,200 Q380,230 400,230"/>
+    <!-- More ERPs to tables -->
+    <path d="M340,320 Q380,300 400,280"/>
+    <!-- Marketplace to ENRICHED -->
+    <path d="M340,500 Q380,450 400,380"/>
+  </g>
+  
+  <!-- ATOMIC to MART arrows -->
+  <g stroke="#29B5E8" stroke-width="1.5" fill="none" marker-end="url(#arrowheadBlue)">
+    <path d="M760,215 Q800,200 820,200"/>
+    <path d="M760,300 Q800,280 820,270"/>
+    <path d="M760,350 Q800,370 820,390"/>
+  </g>
+  
+  <!-- Relationship lines within ATOMIC -->
+  <g stroke="#6BCB77" stroke-width="1" stroke-dasharray="4,2" fill="none">
+    <!-- FK relationships -->
+    <path d="M500,130 L500,150"/>
+    <path d="M580,130 L580,150"/>
+    <path d="M580,265 L580,285"/>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(40, 680)">
+    <rect width="1120" height="80" rx="8" fill="#21262D"/>
+    
+    <!-- Legend title -->
+    <text x="20" y="25" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Legend</text>
+    
+    <!-- Layer colors -->
+    <g transform="translate(100, 15)">
+      <rect width="12" height="12" rx="2" fill="#FF6B6B"/>
+      <text x="20" y="11" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">RAW (Source)</text>
+    </g>
+    <g transform="translate(220, 15)">
+      <rect width="12" height="12" rx="2" fill="#6BCB77"/>
+      <text x="20" y="11" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">ATOMIC (Normalized)</text>
+    </g>
+    <g transform="translate(370, 15)">
+      <rect width="12" height="12" rx="2" fill="#29B5E8"/>
+      <text x="20" y="11" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">MART (Consumption)</text>
+    </g>
+    <g transform="translate(520, 15)">
+      <rect width="12" height="12" rx="2" fill="#FFD93D"/>
+      <text x="20" y="11" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">ML Model Output</text>
+    </g>
+    
+    <!-- Key annotations -->
+    <g transform="translate(100, 45)">
+      <text x="0" y="11" fill="#29B5E8" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">PK</text>
+      <text x="25" y="11" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="10">Primary Key</text>
+    </g>
+    <g transform="translate(220, 45)">
+      <text x="0" y="11" fill="#FFD93D" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500">FK</text>
+      <text x="25" y="11" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="10">Foreign Key</text>
+    </g>
+    <g transform="translate(370, 45)">
+      <rect width="40" height="12" rx="2" fill="#6BCB77" opacity="0.3"/>
+      <text x="50" y="11" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="10">Dynamic Table (auto-refresh)</text>
+    </g>
+    
+    <!-- Stats -->
+    <g transform="translate(700, 25)">
+      <text x="0" y="0" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">50+ source systems</text>
+      <text x="0" y="18" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">6 normalized tables</text>
+      <text x="0" y="36" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">6 consumption views</text>
+    </g>
+    <g transform="translate(900, 25)">
+      <text x="0" y="0" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">TARGET_LAG: 1 hour</text>
+      <text x="0" y="18" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">Incremental refresh</text>
+      <text x="0" y="36" fill="#8B949E" font-family="Inter, system-ui, sans-serif" font-size="10">No manual orchestration</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="785" text-anchor="middle" fill="#6E7681" font-family="Inter, system-ui, sans-serif" font-size="11">Snowcore Industries | Data Architecture - Entity Relationship Diagram</text>
+</svg>
